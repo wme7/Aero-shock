@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "medianFilter_vs2010", "medianFilter_vs2010\medianFilter_vs2010.vcxproj", "{394477FC-1AAF-41FF-A6CE-1F83293C061F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{394477FC-1AAF-41FF-A6CE-1F83293C061F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{394477FC-1AAF-41FF-A6CE-1F83293C061F}.Debug|Win32.Build.0 = Debug|Win32
+		{394477FC-1AAF-41FF-A6CE-1F83293C061F}.Release|Win32.ActiveCfg = Release|Win32
+		{394477FC-1AAF-41FF-A6CE-1F83293C061F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

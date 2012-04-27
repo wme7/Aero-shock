@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>Form Template</title></head>
+<body>
+
+<h1>Editing Kompozer Forms<br>
+
+</h1>
+
+<form action="dumpcgi.cgi" method="get" enctype="multipart/form-data">
+  <p><span style="font-style: italic;">If </span>you using a web browser and viewing this page from a server (on localhost or a remote server, but <span style="font-style: italic;">not</span>
+just as a file), then you can play with the form fields, click the
+submit button, and see a representation of the data sent from the form
+to the CGI script. &nbsp;Back up to this page again and try some
+different combinations.... &nbsp; You can also read the further text of
+this page, but that is more usefully done inside of Kompozer, when you
+can test out the editing features.</p><p><span style="font-style: italic;">If </span>you
+are looking at this page in Kompozer, you should see a dotted blue
+rectangle starting above the previous paragraph. &nbsp;That delimits a <span style="font-style: italic;">form</span>. &nbsp;<span style="font-style: italic;">Fields</span> of various types can be used inside a form. &nbsp;The most common types of
+fields for a form are shown below. &nbsp;All fields have a <span style="font-style: italic;">name</span> and a <span style="font-style: italic;">value</span>.
+&nbsp;The only values that are directly editable and visible to the
+final user in a browser are the values in text fields (the most common
+type of field). &nbsp;The names are not visible in the browser, but are
+important when data is transmitted to a CGI script. &nbsp;In Kompozer
+the names of fields are visible&nbsp;in the source view and&nbsp;in popup editing wigits (as discussed below).</p><p>To insert a whole form initially, click on the Form Icon. &nbsp;Be sure to fill in the
+Action URL (the cgi script to be called).</p>
+  <p>To insert and format static text (like labels) within a form, do it just as outside a
+form, as in a normal word-processor.</p>
+
+  <p>To insert a new form <span style="font-style: italic;">field</span>,
+put the cursor in the proper place <span style="font-style: italic;">inside</span> your form (inside the dotted blue rectangle), then click on the little down arrow to the right of the Form icon, and
+select Form Field... and then the particular kind of field you want.
+&nbsp;Be
+sure you insert your fields inside an existing form! &nbsp;It is a
+Kompozer bug (or very poor feature!) that you can insert a field
+outside of a form or where there is no form at all - do not do it,
+since nothing from that firld will be transmitted to your CGI script.</p><p>My version of Komposer is inconsistent in how you select an existing field to edit and
+open an editing window. &nbsp;(Komposer is&nbsp; free!) &nbsp;Methods
+are indicated for each type below. &nbsp;</p>
+
+  <p><span style="font-weight: bold;">Text
+fields</span>:&nbsp;You <span style="font-style: italic;">cannot</span>
+change the text <span style="font-style: italic;">in</span>
+the box from the main Komposer editing window! &nbsp;You must open an
+edit windows to change the initial value and the other attributes.
+&nbsp;Two special attributes for text fields are the
+  <span style="font-style: italic;">size </span>attribute
+(length of the box),
+and the attribute for the maximum length of the text.
+&nbsp; You can open an edit window by double clicking on the text
+field (plus many other ways).</p>
+
+Your Name:<input maxlength="60" size="30" value="Who are you?" name="yourName"> <br>
+
+  <br>
+
+Address :<input name="addr1" value="Text longer than its box!" maxlength="60" size="16"><br>
+
+  <p><span style="font-weight: bold;">Radio Buttons</span>: &nbsp;In a browser, only the <span style="font-style: italic;">latest</span>
+clicked radio button is selected among all radio buttons with the
+same <span style="font-style: italic;">name </span>attribute.
+&nbsp;In the form field editing window, you can choose which
+is initially selected. &nbsp;The value for each radio button must
+be specified. &nbsp;Technically a radio button value has nothing to
+do with any label you put in the visible page text beside the button,
+but for simplicity you are likely to want the labels to&nbsp;match
+the values!&nbsp; To open an edit window in my instalation of Komposer,
+I need to left (normal) click on the desired button to select it, and
+then I must go to the Format menu and select &nbsp;Form Field Properties...&nbsp;</p>
+
+Color&nbsp;:<br>
+
+Red:<input value="red" name="color" type="radio"><br>
+
+Blue:<input value="blue" name="color" type="radio"><br>
+
+Green:<input value="green" checked="checked" name="color" type="radio"><br>
+
+
+  <p><span style="font-weight: bold;">Check boxes</span>: &nbsp;Check&nbsp;boxes are handy when you want any number of simultaneous
+check allowed (unlike radio buttons). &nbsp;If you want to deal
+with each check box separately, you can give them all different names.
+&nbsp;If you want to deal with all the checked boxes as a list of
+values that have been checked, give them all the same name. &nbsp;(Recall this name is not visible in the normal view.)</p>
+  <p>In the example below,&nbsp;the
+common <span style="font-style: italic;">name </span>is
+vain. &nbsp;Just to illustrate that the values for the boxes do not
+need to match the labels beside them, I chose&nbsp;
+values&nbsp;v1, v2, and v3 for the three boxes. &nbsp;You can
+select
+which ones are initially checked in the form field editing window:
+&nbsp;Open an edit window the same way as with a radio button:
+&nbsp;left click on the field, and go to the Format Menu and
+select&nbsp;Form Field Properties...</p>
+
+
+Attractive:<input value="v1" checked="checked" name="vanity" type="checkbox"><br>
+
+Rich:<input value="v2" checked="checked" name="vanity" type="checkbox"><br>
+
+Famous:<input value="v3" checked="checked" name="vanity" type="checkbox"><br>
+
+  <p><span style="font-weight: bold;">Submit button</span>:
+&nbsp;You must make sure you have at least one Submit Button, or you
+cannot
+finish and send anything to your Python script!&nbsp; If you create one
+from scratch rather than editing an existing form, be sure to select
+the form field type "Submit Button", not just "Button". &nbsp;Changing
+the
+Submit
+button's <span style="font-style: italic;">value</span>
+attribute changes the <span style="font-style: italic;">label</span>
+that appears on the button.&nbsp; Perversely, to edit an existing Submit Button's
+name (the label), you need to <span style="font-style: italic;">right</span>
+click on it, not left click. &nbsp;Then in the popup menu, select
+&nbsp;Form Field Properties ... </p>
+
+  <p>&nbsp;The script called when the submit button is pressed is a
+property of the <span style="font-style: italic;">whole</span>
+form (the action URL). &nbsp;Hence editing the Submit button will
+not change the action! &nbsp;To change the associated action URL,
+&nbsp;<span style="font-style: italic;">right</span>
+click within the form but <span style="font-style: italic;">not
+on any field</span>, and in the popup menu select Form
+Properties.... &nbsp; Set the Action URL, but a form name is not
+necessary. &nbsp;The action URL for this form is dumpcgi.cgi, which just dumps all form data to a web page.</p>
+
+
+&nbsp; <input value="Submit" type="submit">
+&nbsp;<br>
+
+  <p>A reset
+button is
+optional.&nbsp; It tosses out all changes made by the user and
+reverts
+to the starting values for all fields.</p>
+
+&nbsp; <input type="reset">
+  <br>
+
+  <p>A
+<span style="font-weight: bold;">hidden field</span> returns a specified value, but is neither seen nor
+editable by the browser user. &nbsp;There is a hidden field at the
+bottom of this form. &nbsp;Komposer shows it as a yellow rectangle
+saying 'INPUT'. &nbsp;You can double-click on it to edit it. <span style="font-style: italic;">&nbsp; </span>Since
+the position of hidden fields is not shown to the browser user, I
+suggest you put them either at the beginning or the end of your forms
+if you need them.</p><h3>Creating your own</h3>If you want to create your own page with a form, here are two basic approaches:<br><ul><li>Save
+this form to the file name you want and eliminate the parts of the form
+you do not
+want, and move around and make sufficient copies of the elements you do
+want. &nbsp;This provides
+you with a form and a submit button in particular. &nbsp;You still need
+to edit the field attributes to have the names and values you want,
+particularly for the form action. &nbsp;This may be most easily done in
+the source view.</li><li>Alternately,
+start with a blank page. &nbsp;In this case be sure to start by
+inserting a whole form! &nbsp;Click on the Form Icon. &nbsp;Be sure to
+fill in the
+Action URL (the cgi script to be called). &nbsp;Be careful! &nbsp;It is
+a Kompozer bug that you can insert a form field where there is not
+form. &nbsp;Then the page will not work!</li></ul><input name="myHiddenField" value="fromWebPage" type="hidden">
+</form>
+
+</body></html>

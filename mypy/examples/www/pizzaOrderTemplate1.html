@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Andy's Pizza</title>
+
+</head>
+<body>
+<h1>Andy's Pizza</h1>
+<h2>Online Ordering</h2>
+{msg}
+<p>{invitation}</p>
+<form action="pizza1.cgi">Your name <input value="{client}" maxlength="40" size="40" name="client"><br>
+<br>
+Select the size:&nbsp;&nbsp;<br>
+<input name="size" value="small" type="radio">
+Small: &nbsp;$5.50 plus $0.50 per topping<br>
+<input name="size" value="medium" type="radio">Medium:
+&nbsp;$7.85 plus $0.75 per topping<br>
+<input name="size" value="large" type="radio">Large:
+&nbsp;$10.50 plus $1.00 per topping<br>
+<br>
+Check desired toppings:<br>
+<input name="topping" value="pepperoni" type="checkbox"> Pepperoni<br>
+<input name="topping" value="sausage" type="checkbox">
+Sausage<br>
+<input name="topping" value="onions" type="checkbox">
+Onions<br>
+<input name="topping" value="mushrooms" type="checkbox"> Mushrooms<br>
+<input name="topping" value="extra cheese" type="checkbox"> Extra cheese<br>
+<br>
+<input value="Submit Pizza Order" type="submit"> <input name="pastState" value="{state}" type="hidden"><br>
+</form>
+</body></html>
