@@ -5,14 +5,14 @@ REAL, DIMENSION (1000) :: X, C, V, R, RI,P, U, T, TI, ET, EI, FN, FA, FB, FC, AV
 REAL, DIMENSION (20)   :: GH, W
 REAL, DIMENSION (1000) :: Z, THETA, PSI, VIS,G1
 OPEN (UNIT = 10, FILE = 'POSTITER.TEC', STATUS = 'UNKNOWN')
-write(10,*) 'variables = "x","r","p","z","t","tau" '
+write(10,*) 'variables = "x","r","p","z","t" '
 OPEN (UNIT = 20, FILE = 'INITCHECK.TEC', STATUS = 'UNKNOWN')
 NX          = 101
-NXP1        = NX + 1
+NXP1        = NX
 GHNC        = 1
-CFL         = 0.5
+CFL         = 0.8
 OUTTIME     = 0.1
-IT       = 1
+IT       = 0
 IF (GHNC .EQ. 0) THEN
 NV = 20
 ELSE
@@ -28,8 +28,8 @@ IF (GHNC .EQ. 1) GO TO 10
     END DO
     GO TO 30
 10  CONTINUE
-    V1  = -10
-    V2  = 10
+    V1  = -20
+    V2  = 20
     DV  = (V2-V1)/(NV-1.)
     DO I = 1, NV
     V(I) = V1 + DV * (I-1.)
@@ -42,13 +42,6 @@ IF (GHNC .EQ. 1) GO TO 10
     C(1)    = 14./45. * DV
     C(NV)   = C(1)
 30  CONTINUE
-    
-    !UL  = 0.
-    !TL  = 4.38385
-    !ZL  = 0.2253353
-    !UR  = 0.
-    !TR  = 8.972544
-    !ZR  =  0.1204582
     
     UL  = 0.
     TL  = 4.38385
@@ -124,48 +117,85 @@ ISTOP = 0
     DO J = 1, NXP1
     DO K = 1, NV
         PP      = (V(K)-U(J)) * (V(K)-U(J)) /T(J)
-        Feq(K,J)   = 1/((EXP(PP)/Z(J)) + IT )
+        !Feq(K,J)   = 1/((EXP(PP)/Z(J)) + IT )
+        F(K,J)   = 1/((EXP(PP)/Z(J)) + IT )
     END DO    
     END DO
 
+    eps = 1E-25
+    c1 = - 1./6.
+    c2 = 2./6.
+    c3 = 5./6.
+    c4 = - 7./6.
+    c5 = 11./6. 
     
-    DO K = 1, NV             
-             ANU  = V(K)*DTDX 
-             DO j = 2,(NXP1-1)
-                !IF (F(K,J+1).EQ.F(K,J)) THEN
-                THETA(j) = 0.
-                !ELSE
-                !THETA(j) = (F(K,J-SIGN(1.,ANU)+1)-F(K,J-SIGN(1.,ANU)))/(F(K,J+1)-F(K,J))
-             !END IF        
-             END DO
-             THETA(1) = 1
-             THETA(NXP1) = 1
-             DO j = 3,(nxp1-2)
-                if (THETA(j) .LE. 0) then
-                PSI(j) = 0          
-                else
-                PSI(J) = (ABS(THETA(J))+THETA(J))/(1+ABS(THETA(J)))
-                end if
-             END DO
-            PSI(1) = 1
-            PSI(2) = 1
-            PSI(NXP1) = 1
-            PSI(NXP1-1) = 1
-             DO J=3,(NXP1-2)
-             FN(J)  =  F(K,J) - DTDX * ( 0.5D0*V(K)*( ( F(K,J) + F(K,J+1) ) - ( F(K,J-1)+F(K,J) ) ) - 0.5D0 * SIGN(1.,ANU)*V(K) * ( ( F(K,J+1)-F(K,J) ) - ( F(K,J)-F(K,J-1) ) )+ 0.5D0 * ( (PSI(J) * (SIGN(1.,ANU)-ANU) * V(K)*(F(K,J+1)-F(K,J)) ) - (PSI(J-1) * (SIGN(1.,ANU)-ANU)*V(K)*( F(K,J)-F(K,J-1) ) ) ) ) + (DT/VIS(J))*(FEQ(K,J)-F(K,J))
+    DO K = 1, nv  
+             vxp = max(v(k),0.)
+             vxm = min(v(k),0.)             
+             do j = 4, nxp1-3
+             sl0m = vxm*(13./12.)*(f(k,j-2)-2*f(k,j-1)+f(k,j))**2 + vxm*(1./4.)*(f(k,j-2)-4.*f(k,j-1)+3.*f(k,j))**2
+             sl1m = vxm*(13./12.)*(f(k,j-1)-2*f(k,j)+f(k,j+1))**2 + vxm*(1./4.)*(f(k,j-1)-f(k,j+1))**2
+             sl2m = vxm*(13./12.)*(f(k,j)-2*f(k,j+1)+f(k,j+2))**2 + vxm*(1./4.)*(3.*f(k,j)-4.*f(k,j+1)+f(k,j+2))**2
+             sl0p = vxp*(13./12.)*(f(k,j-3)-2*f(k,j-2)+f(k,j-1))**2 + vxp*(1./4.)*(f(k,j-3)-4.*f(k,j-2)+3.*f(k,j-1))**2
+             sl1p = vxp*(13./12.)*(f(k,j-2)-2*f(k,j-1)+f(k,j))**2 + vxp*(1./4.)*(f(k,j-2)-f(k,j))**2
+             sl2p = vxp*(13./12.)*(f(k,j-1)-2*f(k,j)+f(k,j+1))**2 + vxp*(1./4.)*(3.*f(k,j-1)-4.*f(k,j)+f(k,j+1))**2
+             
+             sr0m = vxm*(13./12.)*(f(k,j-1)-2*f(k,j)+f(k,j+1))**2 + vxm*(1./4.)*(f(k,j-1)-4.*f(k,j)+3.*f(k,j+1))**2
+             sr1m = vxm*(13./12.)*(f(k,j)-2*f(k,j+1)+f(k,j+2))**2 + vxm*(1./4.)*(f(k,j)-f(k,j+2))**2
+             sr2m = vxm*(13./12.)*(f(k,j+1)-2*f(k,j+2)+f(k,j+3))**2 + vxm*(1./4.)*(3.*f(k,j+1)-4.*f(k,j+2)+f(k,j+3))**2
+             sr0p = vxp*(13./12.)*(f(k,j-2)-2*f(k,j-1)+f(k,j))**2 + vxp*(1./4.)*(f(k,j-2)-4.*f(k,j-1)+3.*f(k,j))**2
+             sr1p = vxp*(13./12.)*(f(k,j-1)-2*f(k,j)+f(k,j+1))**2 + vxp*(1./4.)*(f(k,j-1)-f(k,j+1))**2
+             sr2p = vxp*(13./12.)*(f(k,j)-2*f(k,j+1)+f(k,j+2))**2 + vxp*(1./4.)*(3.*f(k,j)-4.*f(k,j+1)+f(k,j+2))**2
+             
+             al0m  = 1. / (10. * (eps + sl0m))**2
+             al1m  = 6. / (10. * (eps + sl1m))**2
+             al2m  = 3. / (10. * (eps + sl2m))**2
+             al0p  = 1. / (10. * (eps + sl0p))**2
+             al1p  = 6. / (10. * (eps + sl1p))**2
+             al2p  = 3. / (10. * (eps + sl2p))**2
+             
+             ar0m  = 3. / (10. * (eps + sr0m))**2
+             ar1m  = 6. / (10. * (eps + sr1m))**2
+             ar2m  = 1. / (10. * (eps + sr2m))**2
+             ar0p  = 3. / (10. * (eps + sr0p))**2
+             ar1p  = 6. / (10. * (eps + sr1p))**2
+             ar2p  = 1. / (10. * (eps + sr2p))**2
+             
+             wl0m  = al0m / (al0m+al1m+al2m)
+             wl1m  = al1m / (al0m+al1m+al2m)
+             wl2m  = al2m / (al0m+al1m+al2m)
+             wl0p  = al0p / (al0p+al1p+al2p)
+             wl1p  = al1p / (al0p+al1p+al2p)
+             wl2p  = al2p / (al0p+al1p+al2p)
+             
+             wr0m  = ar0m / (ar0m+ar1m+ar2m)
+             wr1m  = ar1m / (ar0m+ar1m+ar2m)
+             wr2m  = ar2m / (ar0m+ar1m+ar2m)
+             wr0p  = ar0p / (ar0p+ar1p+ar2p)
+             wr1p  = ar1p / (ar0p+ar1p+ar2p)
+             wr2p  = ar2p / (ar0p+ar1p+ar2p)
+             
+             flm=vxm * (wl0m*(c1*f(k,j-2)+c3*f(k,j-1)+c2*f(k,j))+wl1m*(c2*f(k,j-1)+c3*f(k,j)+c1*f(k,j+1))+wl2m*(c5*f(k,j)+c4*f(k,j+1)+c2*f(k,j+2))) 
+             flp=vxp * (wl0p*(c2*f(k,j-3)+c4*f(k,j-2)+c5*f(k,j-1))+wl1p*(c1*f(k,j-2)+c3*f(k,j-1)+c2*f(k,j))+wl2p*(c2*f(k,j-1)+c3*f(k,j)+c1*f(k,j+1)))
+             frm=vxm * (wr0m*(c1*f(k,j-1)+c3*f(k,j)+c2*f(k,j+1))+wr1m*(c2*f(k,j)+c3*f(k,j+1)+c1*f(k,j+2))+wr2m*(c5*f(k,j+1)+c4*f(k,j+2)+c2*f(k,j+3)))
+             frp=vxp * (wr0p*(c2*f(k,j-2)+c4*f(k,j-1)+c5*f(k,j))+wr1p*(c1*f(k,j-1)+c3*f(k,j)+c2*f(k,j+1))+wr2p*(c2*f(k,j)+c3*f(k,j+1)+c1*f(k,j+2)))
+             
+             fl = flm + flp
+             fr = frm + frp
+           
+             fn(j)  =  f(k,j) - dt/dx * (fr - fl)
              END DO 
-            !FN(1) = F(K,1)
-            !FN(2) = F(K,2)
-            !FN(NXP1) = F(K,NXP1)
-            !FN(NXP1-1)= F(K,NXP1-1) 
-            DO j = 1,NXP1
-            F(K,J) = FN(J)  
-            F(K,1) = fn(4)
-            F(K,2) = fn(3) 
-            F(K,NXP1) = fn(nxp1-3)      
-            F(K,NXP1-1) = fn(nxp1-2)        
-            END DO
 
+            DO j = 1,NXP1   
+            F(K,J) = FN(J)     
+                  
+            F(K,1) = fn(4)
+            F(K,2) = fn(4) 
+            F(k,3) = fn(4)
+            F(K,NXP1) = fn(nxp1-3)      
+            F(K,NXP1-1) = fn(nxp1-3) 
+            F(K,NXP1-2) = fn(nxp1-3)                  
+            END DO
     END DO    
     DO J = 1, NXP1
     SR = 0
@@ -255,7 +285,7 @@ ISTOP = 0
         WRITE (40,*) V(K), F(K,nxp1/3)
       END DO
     DO J = 1, NXP1
-    WRITE (10,*) X(J), R(J), p(j), z(j), t(j), vis(j)
+    WRITE (10,*) X(J), R(J), p(j), z(j), t(j)
     END DO
 STOP    
 END PROGRAM
