@@ -1,0 +1,24 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Parameters - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP1203.tmp" with contents
+[
+/compile_only /nologo /warn:nofileopt /module:"Release/" /object:"Release/" 
+"C:\mrtmaxwell\LBM_D3Q19.f90"
+]
+<h3>Output Window</h3>
+Compiling Fortran...
+C:\mrtmaxwell\LBM_D3Q19.f90
+
+
+
+<h3>Results</h3>
+LBM_D3Q19.obj - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

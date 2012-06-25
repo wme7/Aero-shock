@@ -1,0 +1,18 @@
+TMAX=       Maximum number of iterations
+        10000000
+XMAX   =       Grid size in x dimension
+        257
+YMAX   =       Grid size in y dimension
+        257
+NUMAX  =       Output frequency
+        1000
+U0     =       Incoming velocity (U0 < 0.1)
+        0.1
+Re     =       Reynolds Number
+        1000
+FERMI  =       Check if it's fermi version, true for fermi, false for bose
+        .false.
+T_inf  =       Far-field temperature
+	1.0d0
+z_inf  =       Far-field fugasity
+	0.1d0

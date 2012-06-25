@@ -1,0 +1,24 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: LBM_D3Q19 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP17.tmp" with contents
+[
+/check:bounds /compile_only /dbglibs /debug:full /nologo /traceback /warn:argument_checking /warn:nofileopt /module:"Debug/" /object:"Debug/" /pdbfile:"Debug/DF60.PDB" 
+"E:\MRT\Parameters.f90"
+]
+<h3>Output Window</h3>
+Compiling Fortran...
+E:\MRT\Parameters.f90
+
+
+
+<h3>Results</h3>
+Parameters.obj - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
