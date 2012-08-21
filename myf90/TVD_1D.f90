@@ -55,13 +55,13 @@
 !	Step 1: Ratio of consecutive gradients (theta)
     do i = 2, nx-1	 !98 iterations
         if (u(i+1) .eq. u(i)) then
-            theta(i) = 0 !
+            theta(i) = 1 !
         else
             theta(i) = (u(i-sign(1.,a)+1.)-u(i-sign(1.,a)))/(u(i+1.)-u(i))
         end if
 	end do
-    theta(1)=0	! the missing 2	iterations
-    theta(nx)=0
+    theta(1)=1	! the missing 2	iterations
+    theta(nx)=1
 !    
 !	Step 2: Van Leer Limiter Function (phi)
 	do i = 3,nx-2

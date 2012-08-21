@@ -1,0 +1,156 @@
+PROG = DG2D_kinetic
+
+DIR    = .
+SRCDIR = ./src
+BIN    = ./bin
+FBIN   = ./bin
+
+#MOD_SFX= d
+MOD_SFX=mod
+.SUFFIXES:
+.SUFFIXES: .f90 .o .$(MOD_SFX)
+F90=ifort
+#F90=gfortran
+#F90=pgf95
+
+LINK    = $(F90) -O3 #-g
+COMP90  = $(F90) -O3
+COMP77  = $(F90) -O3 #-132
+
+FFLAGS	= #-unroll8 -autodouble -W1 -mtune=core2
+FFLAGS2 = #-unroll8 -autodouble -W1 -mtune=core2
+LIBDIR  = -L/usr/local/cuda/lib64
+LIB     = #-lcudart
+#LIBDIR2 = -L/opt/intel/compiler70/ia32/lib
+#LIB2    = -lintrins
+
+# ABSOFT fortran
+#COMP90  = f90 -O2
+#COMP77  = f77 -O2 -W
+#LINK    = f90 -O2  
+#FFLAGS  =  -cpu:p7  
+#FFLAGS2 =  -cpu:p7
+#LIBDIR  = -L/usr/local/Matlab6p1/extern/lib/glnx86
+#LIB     = -leng -lmat -lmx -lut 
+#-llibmat.so -llibmx.so -llibut.so  
+
+
+##LIBDIR  = -L/usr/local/matlab6p1/extern/lib/glnx86/
+#LIB     =  libeng.so libmat.so libmx.so libut.so  
+
+#LINK    = f77 -fast -xO4 -xsafe=mem -xarch=v8plusa -xchip=ultra
+#COMP    = f77 -e -fast -xO4 -xsafe=mem -xarch=v8plusa -xchip=ultra
+
+OBJS =  $(FBIN)/universal.o\
+	$(FBIN)/State_Var.o\
+	$(FBIN)/Kinetic_Var.o\
+	$(FBIN)/Legendre.o\
+	$(FBIN)/splibsrc1.o\
+	$(FBIN)/MD2D_Grid.o\
+	$(FBIN)/Grid2D_Pack.o\
+	$(FBIN)/RK_Var.o\
+	$(FBIN)/Metric_Var.o\
+	$(FBIN)/Metric_Pack.o\
+	$(FBIN)/NorVec_Var.o\
+	$(FBIN)/NorVec_Pack.o\
+	$(FBIN)/Char_Var.o\
+	$(FBIN)/BC_Pack.o\
+	$(FBIN)/Time_Pack.o\
+	$(FBIN)/Diff_Pack.o\
+	$(FBIN)/Kinetic_Pack.o\
+	$(FBIN)/DG2D_kinetic.o
+
+#	$(FBIN)/Filter_Var.o\
+#	$(FBIN)/Filter_Pack.o\
+#	$(FBIN)/Time_Pack.o\
+#	$(FBIN)/OutPut_Tec.o\
+#	$(FBIN)/Visual_Graph.o\
+#	$(FBIN)/MG_Var.o\
+
+
+$(PROG):  $(OBJS)
+	echo $(BIN)
+	@echo ""
+	@echo "Linking object files $^ into $@"
+	$(LINK) -o $(PROG) $(OBJS) $(LIBDIR) $(LIB) -lm -lstdc++
+#	mv $(PROG) ../.
+
+#$(LIBDIR) $(LIB)
+
+#Source file
+$(FBIN)/%.o: $(SRCDIR)/%.f90
+	@echo ""
+	@echo "Compiling source file $< into $@"
+	$(COMP90) $(FFLAGS) -c $<
+	mv *.o $(FBIN)
+#	mv *.mod $(MDIR)
+
+
+$(FBIN)/%.o: $(SRCDIR)/%.for
+	@echo ""
+	@echo "Compiling source file $< into $@"
+	$(COMP77) $(FFLAGS2) -c $<
+	mv *.o $(FBIN)
+
+$(FBIN)/%.o: $(SRCDIR)/%.f
+	@echo ""
+	@echo "Compiling source file $< into $@"
+	$(COMP77) $(FFLAGS2) -c $<
+	mv *.o $(FBIN)
+
+#Module 
+$(FBIN)/%.$(MOD_SFX):
+#	@echo ""
+#	@if [ ! -s $@ ]; then \
+#		echo "Error, module file deleted?"; exit 1; fi
+#	@echo "Module file $@ considered updated through dependence on: $^"
+	touch $@
+
+#Dependencies for creating objectfile (USE Statement)
+$(FBIN)/DG2D_kinetic.o:\
+	$(FBIN)/UNIVERSAL_CONST.$(MOD_SFX)\
+	$(FBIN)/LEGENDRE.$(MOD_SFX)\
+	$(FBIN)/RK_VAR.$(MOD_SFX)\
+	$(FBIN)/MD2D_GRID.$(MOD_SFX)\
+	$(FBIN)/STATE_VAR.$(MOD_SFX)\
+	$(FBIN)/CHAR_VAR.$(MOD_SFX)
+
+
+$(FBIN)/Grid2D_Pack.o:\
+	$(FBIN)/MD2D_GRID.$(MOD_SFX)\
+	$(FBIN)/UNIVERSAL_CONST.$(MOD_SFX)\
+	$(FBIN)/LEGENDRE.$(MOD_SFX)
+
+$(FBIN)/BC_Pack.o:\
+	$(FBIN)/MD2D_GRID.$(MOD_SFX)\
+	$(FBIN)/UNIVERSAL_CONST.$(MOD_SFX)\
+	$(FBIN)/CHAR_VAR.$(MOD_SFX)
+
+$(FBIN)/Time_Pack.o:\
+	$(FBIN)/MD2D_GRID.$(MOD_SFX)\
+	$(FBIN)/RK_VAR.$(MOD_SFX)\
+	$(FBIN)/METRIC_VAR.$(MOD_SFX)
+
+$(FBIN)/Diff_Pack.o:\
+	$(FBIN)/LEGENDRE.$(MOD_SFX)\
+	$(FBIN)/METRIC_VAR.$(MOD_SFX)
+
+
+
+#Location of modules in source file
+$(FBIN)/UNIVERSAL_CONST.$(MOD_SFX):$(FBIN)/universal.o
+$(FBIN)/LEGENDRE.$(MOD_SFX)       :$(FBIN)/Legendre.o
+$(FBIN)/RK_VAR.$(MOD_SFX)         :$(FBIN)/RK_Var.o
+$(FBIN)/MD2D_GRID.$(MOD_SFX)      :$(FBIN)/MD2D_Grid.o
+$(FBIN)/STATE_VAR.$(MOD_SFX)      :$(FBIN)/State_Var.o
+$(FBIN)/METRIC_VAR.$(MOD_SFX)     :$(FBIN)/Metric_Var.o
+$(FBIN)/NORVEC_VAR.$(MOD_SFX)     :$(FBIN)/NorVec_Var.o
+$(FBIN)/CHAR_VAR.$(MOD_SFX)       :$(FBIN)/Char_Var.o
+#FILTER_VAR.$(MOD_SFX):$(FBIN)/Filter_Var.o
+#MG_VAR.$(MOD_SFX):$(FBIN)/MG_Var.o
+
+clean:
+	rm -f $(FBIN)/*.*
+	rm -f $(PROG) *.mod
+
+
