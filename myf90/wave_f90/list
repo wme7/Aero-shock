@@ -1,0 +1,26 @@
+bdryflux.f90	:numerical flux on the boundary
+calc.f90	:
+cdt.f90		:determine the correct CFL number and dt
+claim.f90	:
+coefb.f90	:calculate the coefficients used in bdryflux
+eno.f90		:ENO interpolation for post-processing
+errors.f90	:Calculate the error
+euler.f90	:Forware Euler 
+exac.f90	:Calculate the exact solution
+func.f90	:
+gauleg.f90	:
+impvar.f90	:Output
+init.f90	:Set up the initial condition
+input.f90	:
+interpolation.f90:
+intflux.f90	:numerical flux on the internal edges
+legendre.f90	:
+main.f90 	:Main program
+makefile
+mod_wave.mod	
+ordr.f90	:Calculate the rate of convergence
+phifun.f90
+pordr.f90	:rate of convergence for postprocessing
+post.f90	:post-processing
+rk.f90		:Runge-Kutta method (SSP)
+superconv.f90	:rate of convergence of numerical flux

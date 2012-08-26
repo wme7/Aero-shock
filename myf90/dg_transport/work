@@ -1,0 +1,1 @@
+f77 -o run bdryflux.f  calc.f cdt.f euler.f func.f gauleg.f   init.f input.f intflux.f main.f  rk.f impvar.f ordr.f impres.f errors.f

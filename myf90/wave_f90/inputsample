@@ -1,0 +1,20 @@
+    problem number :
+1
+ Post-Processing? 0:No, 1:Yes
+0
+    Polynomial degree k:
+5
+    Order of the RK method:
+6
+ boudary treatment 0:No, 1:test1
+1
+    scheme number :
+                        1: Upwinding
+    scheme number :
+ Initial Time
+    Final time T :
+2
+    cfl=|c|dt/dx :
+1
+ level of refinement=?
+4
