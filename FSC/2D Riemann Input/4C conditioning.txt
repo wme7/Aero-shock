@@ -1,0 +1,21 @@
+	    if ((Y(J) .lt. 0.5) .and. (x(i) .gt. 0.5))  then
+                Z(I,J) = Z4
+                UX(I,J)= UX4
+                UY(I,J)= UY4
+                T(I,J) = T4   
+            else if ((Y(J) .gt. 0.5) .and. (x(i) .lt. 0.5)) then
+                Z(I,J) = Z2
+                UX(I,J)= UX2
+                UY(I,J)= UY2
+                T(I,J) = T2
+            else if ((Y(J) .ge. 0.5) .and. (x(i) .ge. 0.5)) then
+                Z(I,J) = Z1
+                UX(I,J)= UX1
+                UY(I,J)= UY1
+                T(I,J) = T1
+            else
+                Z(I,J) = Z3
+                UX(I,J)= UX3
+                UY(I,J)= UY3
+                T(I,J) = T3    
+            end if    
