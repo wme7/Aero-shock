@@ -38,8 +38,16 @@ OPEN (UNIT = 100, FILE = 'f_time.TEC', STATUS = 'UNKNOWN')
 !
 ! GAUSS-HERMITE QUADRATURE
 !
-GH(:) =(/-5.38748089001,-4.60368244955,-3.94476404012,-3.34785456738,-2.78880605843,-2.25497400209,-1.73853771212,-1.2340762154,-0.737473728545,-0.245340708301,0.245340708301,0.737473728545,1.2340762154,1.73853771212,2.25497400209,2.78880605843,3.34785456738,3.94476404012,4.60368244955,5.38748089001/)
-W(:)  =(/0.898591961453,0.704332961176,0.62227869619,0.575262442852,0.544851742366,0.524080350949,0.509679027117,0.499920871336,0.493843385272,0.490921500667,0.490921500667,0.493843385272,0.499920871336,0.509679027117,0.524080350949,0.544851742366,0.575262442852,0.62227869619,0.704332961176,0.898591961453/)
+GH(:)=(/-5.38748089001,-4.60368244955,-3.94476404012,-3.34785456738, & 
+	-2.78880605843,-2.25497400209,-1.73853771212,-1.2340762154, &
+	-0.737473728545,-0.245340708301,0.245340708301,0.737473728545, &
+	1.2340762154,1.73853771212,2.25497400209,2.78880605843, &
+	3.34785456738,3.94476404012,4.60368244955,5.38748089001/)
+W(:) =(/0.898591961453,0.704332961176,0.62227869619,0.575262442852, & 
+	0.544851742366,0.524080350949,0.509679027117,0.499920871336, &
+	0.493843385272,0.490921500667,0.490921500667,0.493843385272, &
+	0.499920871336,0.509679027117,0.524080350949,0.544851742366, &
+	0.575262442852,0.62227869619,0.704332961176,0.898591961453/)
     DO I = 1, NV
         C(I)    = W(I)
         V(I)    = GH(I)
@@ -162,31 +170,55 @@ DO L = 1, NV
     
     DO I = 4, NX-3
     DO J = 4, NY-3     
-             sl0mx = vxm*(13./12.)*(f(k,l,i-2,j)-2*f(k,l,i-1,j)+f(k,l,i,j))**2 + vxm*(1./4.)*(f(k,l,i-2,j)-4.*f(k,l,i-1,j)+3.*f(k,l,i,j))**2
-             sl1mx = vxm*(13./12.)*(f(k,l,i-1,j)-2*f(k,l,i,j)+f(k,l,i+1,j))**2 + vxm*(1./4.)*(f(k,l,i-1,j)-f(k,l,i+1,j))**2
-             sl2mx = vxm*(13./12.)*(f(k,l,i,j)-2*f(k,l,i+1,j)+f(k,l,i+2,j))**2 + vxm*(1./4.)*(3.*f(k,l,i,j)-4.*f(k,l,i+1,j)+f(k,l,i+2,j))**2
-             sl0px = vxp*(13./12.)*(f(k,l,i-3,j)-2*f(k,l,i-2,j)+f(k,l,i-1,j))**2 + vxp*(1./4.)*(f(k,l,i-3,j)-4.*f(k,l,i-2,j)+3.*f(k,l,i-1,j))**2
-             sl1px = vxp*(13./12.)*(f(k,l,i-2,j)-2*f(k,l,i-1,j)+f(k,l,i,j))**2 + vxp*(1./4.)*(f(k,l,i-2,j)-f(k,l,i,j))**2
-             sl2px = vxp*(13./12.)*(f(k,l,i-1,j)-2*f(k,l,i,j)+f(k,l,i+1,j))**2 + vxp*(1./4.)*(3.*f(k,l,i-1,j)-4.*f(k,l,i,j)+f(k,l,i+1,j))**2
-             sr0mx = vxm*(13./12.)*(f(k,l,i-1,j)-2*f(k,l,i,j)+f(k,l,i+1,j))**2 + vxm*(1./4.)*(f(k,l,i-1,j)-4.*f(k,l,i,j)+3.*f(k,l,i+1,j))**2
-             sr1mx = vxm*(13./12.)*(f(k,l,i,j)-2*f(k,l,i+1,j)+f(k,l,i+2,j))**2 + vxm*(1./4.)*(f(k,l,i,j)-f(k,l,i+2,j))**2
-             sr2mx = vxm*(13./12.)*(f(k,l,i+1,j)-2*f(k,l,i+2,j)+f(k,l,i+3,j))**2 + vxm*(1./4.)*(3.*f(k,l,i+1,j)-4.*f(k,l,i+2,j)+f(k,l,i+3,j))**2
-             sr0px = vxp*(13./12.)*(f(k,l,i-2,j)-2*f(k,l,i-1,j)+f(k,l,i,j))**2 + vxp*(1./4.)*(f(k,l,i-2,j)-4.*f(k,l,i-1,j)+3.*f(k,l,i,j))**2
-             sr1px = vxp*(13./12.)*(f(k,l,i-1,j)-2*f(k,l,i,j)+f(k,l,i+1,j))**2 + vxp*(1./4.)*(f(k,l,i-1,j)-f(k,l,i+1,j))**2
-             sr2px = vxp*(13./12.)*(f(k,l,i,j)-2*f(k,l,i+1,j)+f(k,l,i+2,j))**2 + vxp*(1./4.)*(3.*f(k,l,i,j)-4.*f(k,l,i+1,j)+f(k,l,i+2,j))**2
+             sl0mx = vxm*(13./12.)*(f(k,l,i-2,j)-2*f(k,l,i-1,j)+f(k,l,i,j))**2 &
+		+ vxm*(1./4.)*(f(k,l,i-2,j)-4.*f(k,l,i-1,j)+3.*f(k,l,i,j))**2
+             sl1mx = vxm*(13./12.)*(f(k,l,i-1,j)-2*f(k,l,i,j)+f(k,l,i+1,j))**2 &
+		+ vxm*(1./4.)*(f(k,l,i-1,j)-f(k,l,i+1,j))**2
+             sl2mx = vxm*(13./12.)*(f(k,l,i,j)-2*f(k,l,i+1,j)+f(k,l,i+2,j))**2 &
+		+ vxm*(1./4.)*(3.*f(k,l,i,j)-4.*f(k,l,i+1,j)+f(k,l,i+2,j))**2
+             sl0px = vxp*(13./12.)*(f(k,l,i-3,j)-2*f(k,l,i-2,j)+f(k,l,i-1,j))**2 &
+		+ vxp*(1./4.)*(f(k,l,i-3,j)-4.*f(k,l,i-2,j)+3.*f(k,l,i-1,j))**2
+             sl1px = vxp*(13./12.)*(f(k,l,i-2,j)-2*f(k,l,i-1,j)+f(k,l,i,j))**2 &
+		+ vxp*(1./4.)*(f(k,l,i-2,j)-f(k,l,i,j))**2
+             sl2px = vxp*(13./12.)*(f(k,l,i-1,j)-2*f(k,l,i,j)+f(k,l,i+1,j))**2 &
+		+ vxp*(1./4.)*(3.*f(k,l,i-1,j)-4.*f(k,l,i,j)+f(k,l,i+1,j))**2
+             sr0mx = vxm*(13./12.)*(f(k,l,i-1,j)-2*f(k,l,i,j)+f(k,l,i+1,j))**2 &
+		+ vxm*(1./4.)*(f(k,l,i-1,j)-4.*f(k,l,i,j)+3.*f(k,l,i+1,j))**2
+             sr1mx = vxm*(13./12.)*(f(k,l,i,j)-2*f(k,l,i+1,j)+f(k,l,i+2,j))**2 &
+		+ vxm*(1./4.)*(f(k,l,i,j)-f(k,l,i+2,j))**2
+             sr2mx = vxm*(13./12.)*(f(k,l,i+1,j)-2*f(k,l,i+2,j)+f(k,l,i+3,j))**2 &
+		+ vxm*(1./4.)*(3.*f(k,l,i+1,j)-4.*f(k,l,i+2,j)+f(k,l,i+3,j))**2
+             sr0px = vxp*(13./12.)*(f(k,l,i-2,j)-2*f(k,l,i-1,j)+f(k,l,i,j))**2 &
+		+ vxp*(1./4.)*(f(k,l,i-2,j)-4.*f(k,l,i-1,j)+3.*f(k,l,i,j))**2
+             sr1px = vxp*(13./12.)*(f(k,l,i-1,j)-2*f(k,l,i,j)+f(k,l,i+1,j))**2 &
+		+ vxp*(1./4.)*(f(k,l,i-1,j)-f(k,l,i+1,j))**2
+             sr2px = vxp*(13./12.)*(f(k,l,i,j)-2*f(k,l,i+1,j)+f(k,l,i+2,j))**2 &
+		+ vxp*(1./4.)*(3.*f(k,l,i,j)-4.*f(k,l,i+1,j)+f(k,l,i+2,j))**2
              
-             sl0my = vym*(13./12.)*(f(k,l,i,j-2)-2*f(k,l,i,j-1)+f(k,l,i,j))**2 + vym*(1./4.)*(f(k,l,i,j-2)-4.*f(k,l,i,j-1)+3.*f(k,l,i,j))**2
-             sl1my = vym*(13./12.)*(f(k,l,i,j-1)-2*f(k,l,i,j)+f(k,l,i,j+1))**2 + vym*(1./4.)*(f(k,l,i,j-1)-f(k,l,i,j+1))**2
-             sl2my = vym*(13./12.)*(f(k,l,i,j)-2*f(k,l,i,j+1)+f(k,l,i,j+2))**2 + vym*(1./4.)*(3.*f(k,l,i,j)-4.*f(k,l,i,j+1)+f(k,l,i,j+2))**2
-             sl0py = vyp*(13./12.)*(f(k,l,i,j-3)-2*f(k,l,i,j-2)+f(k,l,i,j-1))**2 + vyp*(1./4.)*(f(k,l,i,j-3)-4.*f(k,l,i,j-2)+3.*f(k,l,i,j-1))**2
-             sl1py = vyp*(13./12.)*(f(k,l,i,j-2)-2*f(k,l,i,j-1)+f(k,l,i,j))**2 + vyp*(1./4.)*(f(k,l,i,j-2)-f(k,l,i,j))**2
-             sl2py = vyp*(13./12.)*(f(k,l,i,j-1)-2*f(k,l,i,j)+f(k,l,i,j+1))**2 + vyp*(1./4.)*(3.*f(k,l,i,j-1)-4.*f(k,l,i,j)+f(k,l,i,j+1))**2
-             sr0my = vym*(13./12.)*(f(k,l,i,j-1)-2*f(k,l,i,j)+f(k,l,i,j+1))**2 + vym*(1./4.)*(f(k,l,i,j-1)-4.*f(k,l,i,j)+3.*f(k,l,i,j+1))**2
-             sr1my = vym*(13./12.)*(f(k,l,i,j)-2*f(k,l,i,j+1)+f(k,l,i,j+2))**2 + vym*(1./4.)*(f(k,l,i,j)-f(k,l,i,j+2))**2
-             sr2my = vym*(13./12.)*(f(k,l,i,j+1)-2*f(k,l,i,j+2)+f(k,l,i,j+3))**2 + vym*(1./4.)*(3.*f(k,l,i,j+1)-4.*f(k,l,i,j+2)+f(k,l,i,j+3))**2
-             sr0py = vyp*(13./12.)*(f(k,l,i,j-2)-2*f(k,l,i,j-1)+f(k,l,i,j))**2 + vyp*(1./4.)*(f(k,l,i,j-2)-4.*f(k,l,i,j-1)+3.*f(k,l,i,j))**2
-             sr1py = vyp*(13./12.)*(f(k,l,i,j-1)-2*f(k,l,i,j)+f(k,l,i,j+1))**2 + vyp*(1./4.)*(f(k,l,i,j-1)-f(k,l,i,j+1))**2
-             sr2py = vyp*(13./12.)*(f(k,l,i,j)-2*f(k,l,i,j+1)+f(k,l,i,j+2))**2 + vyp*(1./4.)*(3.*f(k,l,i,j)-4.*f(k,l,i,j+1)+f(k,l,i,j+2))**2
+             sl0my = vym*(13./12.)*(f(k,l,i,j-2)-2*f(k,l,i,j-1)+f(k,l,i,j))**2 &
+		+ vym*(1./4.)*(f(k,l,i,j-2)-4.*f(k,l,i,j-1)+3.*f(k,l,i,j))**2
+             sl1my = vym*(13./12.)*(f(k,l,i,j-1)-2*f(k,l,i,j)+f(k,l,i,j+1))**2 &
+		+ vym*(1./4.)*(f(k,l,i,j-1)-f(k,l,i,j+1))**2
+             sl2my = vym*(13./12.)*(f(k,l,i,j)-2*f(k,l,i,j+1)+f(k,l,i,j+2))**2 &
+		+ vym*(1./4.)*(3.*f(k,l,i,j)-4.*f(k,l,i,j+1)+f(k,l,i,j+2))**2
+             sl0py = vyp*(13./12.)*(f(k,l,i,j-3)-2*f(k,l,i,j-2)+f(k,l,i,j-1))**2 &
+		+ vyp*(1./4.)*(f(k,l,i,j-3)-4.*f(k,l,i,j-2)+3.*f(k,l,i,j-1))**2
+             sl1py = vyp*(13./12.)*(f(k,l,i,j-2)-2*f(k,l,i,j-1)+f(k,l,i,j))**2 &
+		+ vyp*(1./4.)*(f(k,l,i,j-2)-f(k,l,i,j))**2
+             sl2py = vyp*(13./12.)*(f(k,l,i,j-1)-2*f(k,l,i,j)+f(k,l,i,j+1))**2 &
+		+ vyp*(1./4.)*(3.*f(k,l,i,j-1)-4.*f(k,l,i,j)+f(k,l,i,j+1))**2
+             sr0my = vym*(13./12.)*(f(k,l,i,j-1)-2*f(k,l,i,j)+f(k,l,i,j+1))**2 &
+		+ vym*(1./4.)*(f(k,l,i,j-1)-4.*f(k,l,i,j)+3.*f(k,l,i,j+1))**2
+             sr1my = vym*(13./12.)*(f(k,l,i,j)-2*f(k,l,i,j+1)+f(k,l,i,j+2))**2 &
+		+ vym*(1./4.)*(f(k,l,i,j)-f(k,l,i,j+2))**2
+             sr2my = vym*(13./12.)*(f(k,l,i,j+1)-2*f(k,l,i,j+2)+f(k,l,i,j+3))**2 &
+		+ vym*(1./4.)*(3.*f(k,l,i,j+1)-4.*f(k,l,i,j+2)+f(k,l,i,j+3))**2
+             sr0py = vyp*(13./12.)*(f(k,l,i,j-2)-2*f(k,l,i,j-1)+f(k,l,i,j))**2 &
+		+ vyp*(1./4.)*(f(k,l,i,j-2)-4.*f(k,l,i,j-1)+3.*f(k,l,i,j))**2
+             sr1py = vyp*(13./12.)*(f(k,l,i,j-1)-2*f(k,l,i,j)+f(k,l,i,j+1))**2 &
+		+ vyp*(1./4.)*(f(k,l,i,j-1)-f(k,l,i,j+1))**2
+             sr2py = vyp*(13./12.)*(f(k,l,i,j)-2*f(k,l,i,j+1)+f(k,l,i,j+2))**2 &
+		+ vyp*(1./4.)*(3.*f(k,l,i,j)-4.*f(k,l,i,j+1)+f(k,l,i,j+2))**2
              
              al0mx  = 1. / (10. * (eps + sl0mx))**2
              al1mx  = 6. / (10. * (eps + sl1mx))**2
@@ -240,15 +272,31 @@ DO L = 1, NV
              wr1py  = ar1py / (ar0py+ar1py+ar2py)
              wr2py  = ar2py / (ar0py+ar1py+ar2py) 
              !negative & positive fluxes x
-             flmx=vxm * (wl0mx*(c1*f(k,l,i-2,j)+c3*f(k,l,i-1,j)+c2*f(k,l,i,j))+wl1mx*(c2*f(k,l,i-1,j)+c3*f(k,l,i,j)+c1*f(k,l,i+1,j))+wl2mx*(c5*f(k,l,i,j)+c4*f(k,l,i+1,j)+c2*f(k,l,i+2,j))) 
-             flpx=vxp * (wl0px*(c2*f(k,l,i-3,j)+c4*f(k,l,i-2,j)+c5*f(k,l,i-1,j))+wl1px*(c1*f(k,l,i-2,j)+c3*f(k,l,i-1,j)+c2*f(k,l,i,j))+wl2px*(c2*f(k,l,i-1,j)+c3*f(k,l,i,j)+c1*f(k,l,i+1,j)))
-             frmx=vxm * (wr0mx*(c1*f(k,l,i-1,j)+c3*f(k,l,i,j)+c2*f(k,l,i+1,j))+wr1mx*(c2*f(k,l,i,j)+c3*f(k,l,i+1,j)+c1*f(k,l,i+2,j))+wr2mx*(c5*f(k,l,i+1,j)+c4*f(k,l,i+2,j)+c2*f(k,l,i+3,j)))
-             frpx=vxp * (wr0px*(c2*f(k,l,i-2,j)+c4*f(k,l,i-1,j)+c5*f(k,l,i,j))+wr1px*(c1*f(k,l,i-1,j)+c3*f(k,l,i,j)+c2*f(k,l,i+1,j))+wr2px*(c2*f(k,l,i,j)+c3*f(k,l,i+1,j)+c1*f(k,l,i+2,j)))
+             flmx=vxm * (wl0mx*(c1*f(k,l,i-2,j)+c3*f(k,l,i-1,j)+c2*f(k,l,i,j)) &
+		+wl1mx*(c2*f(k,l,i-1,j)+c3*f(k,l,i,j)+c1*f(k,l,i+1,j)) &
+		+wl2mx*(c5*f(k,l,i,j)+c4*f(k,l,i+1,j)+c2*f(k,l,i+2,j))) 
+             flpx=vxp * (wl0px*(c2*f(k,l,i-3,j)+c4*f(k,l,i-2,j)+c5*f(k,l,i-1,j)) &
+		+wl1px*(c1*f(k,l,i-2,j)+c3*f(k,l,i-1,j)+c2*f(k,l,i,j)) & 
+		+wl2px*(c2*f(k,l,i-1,j)+c3*f(k,l,i,j)+c1*f(k,l,i+1,j)))
+             frmx=vxm * (wr0mx*(c1*f(k,l,i-1,j)+c3*f(k,l,i,j)+c2*f(k,l,i+1,j)) &
+		+wr1mx*(c2*f(k,l,i,j)+c3*f(k,l,i+1,j)+c1*f(k,l,i+2,j)) &
+		+wr2mx*(c5*f(k,l,i+1,j)+c4*f(k,l,i+2,j)+c2*f(k,l,i+3,j)))
+             frpx=vxp * (wr0px*(c2*f(k,l,i-2,j)+c4*f(k,l,i-1,j)+c5*f(k,l,i,j)) &
+		+wr1px*(c1*f(k,l,i-1,j)+c3*f(k,l,i,j)+c2*f(k,l,i+1,j)) &
+		+wr2px*(c2*f(k,l,i,j)+c3*f(k,l,i+1,j)+c1*f(k,l,i+2,j)))
              !negative & positive fluxes y
-             flmy=vym * (wl0my*(c1*f(k,l,i,j-2)+c3*f(k,l,i,j-1)+c2*f(k,l,i,j))+wl1my*(c2*f(k,l,i,j-1)+c3*f(k,l,i,j)+c1*f(k,l,i,j+1))+wl2my*(c5*f(k,l,i,j)+c4*f(k,l,i,j+1)+c2*f(k,l,i,j+2))) 
-             flpy=vyp * (wl0py*(c2*f(k,l,i,j-3)+c4*f(k,l,i,j-2)+c5*f(k,l,i,j-1))+wl1py*(c1*f(k,l,i,j-2)+c3*f(k,l,i,j-1)+c2*f(k,l,i,j))+wl2py*(c2*f(k,l,i,j-1)+c3*f(k,l,i,j)+c1*f(k,l,i,j+1)))
-             frmy=vym * (wr0my*(c1*f(k,l,i,j-1)+c3*f(k,l,i,j)+c2*f(k,l,i,j+1))+wr1my*(c2*f(k,l,i,j)+c3*f(k,l,i,j+1)+c1*f(k,l,i,j+2))+wr2my*(c5*f(k,l,i,j+1)+c4*f(k,l,i,j+2)+c2*f(k,l,i,j+3)))
-             frpy=vyp * (wr0py*(c2*f(k,l,i,j-2)+c4*f(k,l,i,j-1)+c5*f(k,l,i,j))+wr1py*(c1*f(k,l,i,j-1)+c3*f(k,l,i,j)+c2*f(k,l,i,j+1))+wr2py*(c2*f(k,l,i,j)+c3*f(k,l,i,j+1)+c1*f(k,l,i,j+2)))
+             flmy=vym * (wl0my*(c1*f(k,l,i,j-2)+c3*f(k,l,i,j-1)+c2*f(k,l,i,j)) &
+		+wl1my*(c2*f(k,l,i,j-1)+c3*f(k,l,i,j)+c1*f(k,l,i,j+1)) &
+		+wl2my*(c5*f(k,l,i,j)+c4*f(k,l,i,j+1)+c2*f(k,l,i,j+2))) 
+             flpy=vyp * (wl0py*(c2*f(k,l,i,j-3)+c4*f(k,l,i,j-2)+c5*f(k,l,i,j-1)) &
+		+wl1py*(c1*f(k,l,i,j-2)+c3*f(k,l,i,j-1)+c2*f(k,l,i,j)) &
+		+wl2py*(c2*f(k,l,i,j-1)+c3*f(k,l,i,j)+c1*f(k,l,i,j+1)))
+             frmy=vym * (wr0my*(c1*f(k,l,i,j-1)+c3*f(k,l,i,j)+c2*f(k,l,i,j+1)) &
+		+wr1my*(c2*f(k,l,i,j)+c3*f(k,l,i,j+1)+c1*f(k,l,i,j+2)) &
+		+wr2my*(c5*f(k,l,i,j+1)+c4*f(k,l,i,j+2)+c2*f(k,l,i,j+3)))
+             frpy=vyp * (wr0py*(c2*f(k,l,i,j-2)+c4*f(k,l,i,j-1)+c5*f(k,l,i,j)) &
+		+wr1py*(c1*f(k,l,i,j-1)+c3*f(k,l,i,j)+c2*f(k,l,i,j+1)) &
+		+wr2py*(c2*f(k,l,i,j)+c3*f(k,l,i,j+1)+c1*f(k,l,i,j+2)))
              !fluxes x
              flx = flmx + flpx
              frx = frmx + frpx
