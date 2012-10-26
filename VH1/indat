@@ -1,0 +1,10 @@
+&hinput
+ rstrt   = 'no'
+ prefix  = 'NCState'
+ ncycend = 100
+ ndump   = 5000000
+ nprin   = 20
+ nmovie  = 10
+ endtime = 5.0e-01
+ tprin   = 0.5e-01
+ tmovie  = 5.0e+00 /
