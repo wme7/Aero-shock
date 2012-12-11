@@ -1,0 +1,501 @@
+ Number of Domains=
+ ./Parameter/01024Ndom.in      
+ ./Parameter/01024Nedg.in      
+          20
+ GH  -5.38748089001123       -4.60368244955074       -3.94476404011563     
+  -3.34785456738322       -2.78880605842813       -2.25497400208928     
+  -1.73853771211659       -1.23407621539532      -0.737473728545395     
+ -0.245340708300902       0.245340708300902       0.737473728545395     
+   1.23407621539532        1.73853771211659        2.25497400208928     
+   2.78880605842813        3.34785456738322        3.94476404011563     
+   4.60368244955074        5.38748089001123     
+ GHW  0.898591961453179       0.704332961176934       0.622278696191411     
+  0.575262442852504       0.544851742364519       0.524080350948556     
+  0.509679027117457       0.499920871336290       0.493843385272053     
+  0.490921500666746       0.490921500666746       0.493843385272053     
+  0.499920871336290       0.509679027117457       0.524080350948556     
+  0.544851742364519       0.575262442852504       0.622278696191411     
+  0.704332961176934       0.898591961453179     
+ wp  0.898591935634613       0.704332947731018       0.622278690338135     
+  0.575262427330017       0.544851720333099       0.524080336093903     
+  0.509679019451141       0.499920874834061       0.493843376636505     
+  0.490921497344971       0.490921497344971       0.493843376636505     
+  0.499920874834061       0.509679019451141       0.524080336093903     
+  0.544851720333099       0.575262427330017       0.622278690338135     
+  0.704332947731018       0.898591935634613     
+  -5.38748089001123       -4.60368244955074       -3.94476404011563     
+  -3.34785456738322       -2.78880605842813       -2.25497400208928     
+  -1.73853771211659       -1.23407621539532      -0.737473728545395     
+ -0.245340708300902       0.245340708300902       0.737473728545395     
+   1.23407621539532        1.73853771211659        2.25497400208928     
+   2.78880605842813        3.34785456738322        3.94476404011563     
+   4.60368244955074        5.38748089001123     
+ Theta           0 I_prob           3
+ Ux1 -0.750000000000000       0.749999781320640       0.749999781320639     
+  0.749999781320640       0.749999781320639       0.749999781320640     
+  0.749999781320640       0.749999781320639       0.749999781320639     
+  0.749999781320640       0.749999781320639       0.749999781320640     
+  0.749999781320640       0.749999781320639       0.749999781320640     
+  0.749999781320639       0.749999781320640     
+ Uy1 -0.500000000000000       0.499999951176770       0.499999951176770     
+  0.499999951176770       0.499999951176770       0.499999951176770     
+  0.499999951176769       0.499999951176770       0.499999951176769     
+  0.499999951176770       0.499999951176770       0.499999951176769     
+  0.499999951176769       0.499999951176770       0.499999951176770     
+  0.499999951176770       0.499999951176770     
+ Z1  0.142000000000000       0.142000106001398       0.142000106001390     
+  0.142000106001391       0.142000106001384       0.142000106001405     
+  0.142000106001400       0.142000106001400       0.142000106001397     
+  0.142000106001406       0.142000106001398       0.142000106001399     
+  0.142000106001399       0.142000106001387       0.142000106001388     
+  0.142000106001382       0.142000106001383     
+ T1   2.07800000000000        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688     
+ R_loc  0.927008554655421       0.927008554655370       0.927008554655377     
+  0.927008554655334       0.927008554655468       0.927008554655434     
+  0.927008554655437       0.927008554655419       0.927008554655476     
+  0.927008554655420       0.927008554655431       0.927008554655428     
+  0.927008554655350       0.927008554655357       0.927008554655322     
+  0.927008554655324     
+ End of DG2D Initial
+ a_max   5.38748089001123     
+ dt =   6.444982902231664E-004 Deg=           4
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  6.444982902231664E-004
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.288996580446333E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.933494870669499E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.577993160892666E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.222491451115832E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.866989741338999E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.511488031562165E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.155986321785331E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.800484612008498E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  6.444982902231664E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  7.089481192454830E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  7.733979482677996E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  8.378477772901162E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  9.022976063124329E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  9.667474353347496E-003
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.031197264357066E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.095647093379383E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.160096922401700E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.224546751424016E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.288996580446333E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.353446409468650E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.417896238490966E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.482346067513283E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.546795896535600E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.611245725557917E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.675695554580233E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.740145383602550E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.804595212624866E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.869045041647183E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.933494870669499E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  1.997944699691816E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.062394528714132E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.126844357736449E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.191294186758765E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.255744015781082E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.320193844803398E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.384643673825715E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.449093502848031E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.513543331870348E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.577993160892664E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.642442989914981E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.706892818937297E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.771342647959614E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.835792476981931E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.900242306004247E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  2.964692135026564E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.029141964048880E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.093591793071197E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.158041622093513E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.222491451115830E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.286941280138146E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.351391109160463E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.415840938182779E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.480290767205096E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.544740596227412E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.609190425249729E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.673640254272045E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.738090083294362E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.802539912316678E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.866989741338995E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.931439570361311E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  3.995889399383628E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.060339228405944E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.124789057428261E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.189238886450578E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.253688715472894E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.318138544495211E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.382588373517527E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.447038202539844E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.511488031562160E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.575937860584477E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.640387689606793E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.704837518629110E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.769287347651426E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.833737176673743E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.898187005696059E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  4.962636834718376E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.027086663740692E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.091536492763009E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.155986321785325E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.220436150807642E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.284885979829958E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.349335808852275E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.413785637874591E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.478235466896908E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.542685295919225E-002
+ Domain #:    364  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    365  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    396  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ Domain #:    397  at x=:-0.2500  at y=:-0.2500  Density= 0.9270
+ time=  5.607135124941541E-002

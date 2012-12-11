@@ -1,0 +1,40 @@
+
+*** These modified files were found in JOE when it aborted on Fri Jun 15 02:34:23 2012
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+E_gen(2,1,1,1)
+E_gen(2,2,1,1)
+F
+F
+F
+F
+F
+IGH
+TotNum_DM
+TotNum_DM
+
+*** File '(Unnamed)'
+GHW
+Ux
+case
+EU_
+EQ
+EQUI
+RIGHT_HAND_SIDE
+GH2
+Diff
+DG2D
+
+*** File '(Unnamed)'
+Kinetic_Pack.f90
+./Parameter/in.in
+./src/DG2D_kinetic.f90
+./src/DG_bgk1Dv2.m
+./src/2DBGK.f90
+DG2D_kinetic.f90
+DG2D_kinetic.f90
+DG2D_kinetic.f90
+DG2D_kinetic.f90
+Diff_Pack.f90
+NorVec_Pack.f90
