@@ -43,13 +43,28 @@ IF (GHNC .EQ. 1) GO TO 10
     C(NV)   = C(1)
 30  CONTINUE
     
-    UL  = 0.
-    TL  = 4.38385
-    ZL  = 0.2253353
-    UR  = 0.
-    TR  = 8.972544
-    ZR  = 0.1204582
+    !UL  = 0.
+    !TL  = 4.38385
+    !ZL  = 0.2253353
+    !UR  = 0.
+    !TR  = 8.972544
+    !ZR  = 0.1204582
     
+	RL=1.0;
+	UL=0.75;
+	PL=1.0;
+
+	ET=PL+0.5*RL*UL^2
+	TL=4*ET/RL-2*UL^2
+	ZL=RL/sqrt(pi*TL)
+
+	RR=0.125;
+	UR=0;
+	PR=0.1;
+
+	ET=PR+0.5*RR*UR^2
+	TR=4*ET/RR-2*UR^2
+	ZR=RR/sqrt(pi*TR)	
     
     DX = 1./DFLOAT(NX-1)
     X(1)  = -0.5 *DX
