@@ -300,7 +300,7 @@ do i = 1, nx
     sux = 0
     suy = 0
     se  = 0
-	spxx= 0
+    spxx= 0
     spxy= 0
     spyy= 0
       do k = 1, nv
@@ -309,12 +309,12 @@ do i = 1, nx
          sux = sux + c(k)*c(l) * f(k,l,i,j) * v(k)
          suy = suy + c(k)*c(l) * f(k,l,i,j) * v(l)
          se  = se + c(k)*c(l) * f(k,l,i,j) * (0.5 * (v(k)*v(k) + v(l)*v(l)))
-		 spxx = spxx + c(k)*c(l) * f(k,l,i,j)*(v(k) - ux(i,j))**2
+         spxx = spxx + c(k)*c(l) * f(k,l,i,j)*(v(k) - ux(i,j))**2
          spxy = spxy + c(k)*c(l) * f(k,l,i,j) * (v(k) - ux(i,j))*(v(l) -uy(i,j))
          spyy = spyy + c(k)*c(l) * f(k,l,i,j) *( v(l) - uy(i,j))**2
         end do
       end do
-	pxx(i,j)  = spxx
+    pxx(i,j)  = spxx
     pxy(i,j)  = spxy 
     pyy(i,j)  = spyy
     r(i,j)    = sr
@@ -329,7 +329,7 @@ end do
         
       !do k = 1, nv
          !do l = 1, nv
-		 !spxx = spxx + c(k)*c(l) * f(k,l,i,j)*(v(k) - ux(i,j))**2
+         !spxx = spxx + c(k)*c(l) * f(k,l,i,j)*(v(k) - ux(i,j))**2
          !spxy = spxy + c(k)*c(l) * f(k,l,i,j) * (v(k) - ux(i,j))*(v(l) -uy(i,j))
          !spyy = spyy + c(k)*c(l) * f(k,l,i,j) *( v(l) - uy(i,j))**2
         !end do
@@ -460,7 +460,7 @@ subroutine maxwellian_ztp (nx,ny,r,ux,uy,et,z,t,p)
 implicit none
 integer igh,imaxgridx,imaxgridy
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
-integer	nx,ny,i,j
+integer nx,ny,i,j
 real(8) pi
 real,dimension (imaxgridx,imaxgridy) :: r,ux,uy,et,z,t,p
 pi = atan2(1.,1.)*4.

@@ -1,4 +1,6 @@
 program swapmain
+  use swapmod ! Use statements must always come first
+
   implicit none
 
   real :: a, b
@@ -9,11 +11,11 @@ program swapmain
   call swap(a,b)
   write(*,*) a, b
 
-contains 
-  subroutine swap (x,y)
-    real :: x, y, temp
-    temp = x
-    x = y
-    y = temp
-  end subroutine swap
+!contains 
+!  subroutine swap (x,y)
+!    real :: x, y, temp
+!    temp = x
+!    x = y
+!    y = temp
+!  end subroutine swap
 end program swapmain
