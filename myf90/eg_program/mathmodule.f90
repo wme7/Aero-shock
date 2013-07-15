@@ -2,7 +2,7 @@ module mathmodule
 
 implicit none
 private
-public :: ones, zeros, inverse
+public :: ones, zeros, transposev, inverse
 !
 ! Global declarations would appear here it any
 !
@@ -10,6 +10,7 @@ contains
 ! routines provided by this module:
 
 function ones(n,m)
+implicit none
 integer :: n,m
 real, dimension(n,m) :: ones
 ! Using fortran 95:
@@ -17,11 +18,28 @@ ones = 1.0
 end function ones
 
 function zeros(n,m)
+implicit none
 integer :: n,m
 real, dimension(n,m) :: zeros
 ! Using fortran 95:
 zeros = 0.0
 end function zeros
+
+subroutine transposev(a,ta)
+! transpose and vector array
+! becuase fortran can olny transpose rank 2 arrays
+implicit none
+integer :: n,m,i,j
+real, dimension(:,:), intent(in)  :: a
+real, dimension(:,:), intent(out) :: ta
+n = size(a,dim=1)
+m = size(a,dim=2)
+do i=1,n
+  do j =1,m
+  ta(j,i) = a(i,j)
+  end do
+end do
+end subroutine transposev
 
 function inverse(a)
 !============================================================
