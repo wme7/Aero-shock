@@ -1,0 +1,877 @@
+ Number of Domains=
+ ./Parameter/00256Ndom.in      
+ ./Parameter/00256Nedg.in      
+          20
+ GH  -5.38748089001123       -4.60368244955074       -3.94476404011563     
+  -3.34785456738322       -2.78880605842813       -2.25497400208928     
+  -1.73853771211659       -1.23407621539532      -0.737473728545395     
+ -0.245340708300902       0.245340708300902       0.737473728545395     
+   1.23407621539532        1.73853771211659        2.25497400208928     
+   2.78880605842813        3.34785456738322        3.94476404011563     
+   4.60368244955074        5.38748089001123     
+ GHW  0.898591961453179       0.704332961176934       0.622278696191411     
+  0.575262442852504       0.544851742364519       0.524080350948556     
+  0.509679027117457       0.499920871336290       0.493843385272053     
+  0.490921500666746       0.490921500666746       0.493843385272053     
+  0.499920871336290       0.509679027117457       0.524080350948556     
+  0.544851742364519       0.575262442852504       0.622278696191411     
+  0.704332961176934       0.898591961453179     
+ wp  0.898591935634613       0.704332947731018       0.622278690338135     
+  0.575262427330017       0.544851720333099       0.524080336093903     
+  0.509679019451141       0.499920874834061       0.493843376636505     
+  0.490921497344971       0.490921497344971       0.493843376636505     
+  0.499920874834061       0.509679019451141       0.524080336093903     
+  0.544851720333099       0.575262427330017       0.622278690338135     
+  0.704332947731018       0.898591935634613     
+  -5.38748089001123       -4.60368244955074       -3.94476404011563     
+  -3.34785456738322       -2.78880605842813       -2.25497400208928     
+  -1.73853771211659       -1.23407621539532      -0.737473728545395     
+ -0.245340708300902       0.245340708300902       0.737473728545395     
+   1.23407621539532        1.73853771211659        2.25497400208928     
+   2.78880605842813        3.34785456738322        3.94476404011563     
+   4.60368244955074        5.38748089001123     
+ Theta           0 I_prob           3
+ Ux1 -0.750000000000000       0.749999781320640       0.749999781320640     
+  0.749999781320640       0.749999781320640       0.749999781320640     
+  0.749999781320640       0.749999781320640       0.749999781320640     
+  0.749999781320639       0.749999781320639       0.749999781320639     
+  0.749999781320640       0.749999781320639       0.749999781320639     
+  0.749999781320639       0.749999781320639     
+ Uy1 -0.500000000000000       0.499999951176770       0.499999951176770     
+  0.499999951176770       0.499999951176769       0.499999951176769     
+  0.499999951176770       0.499999951176769       0.499999951176770     
+  0.499999951176770       0.499999951176770       0.499999951176770     
+  0.499999951176770       0.499999951176769       0.499999951176770     
+  0.499999951176770       0.499999951176770     
+ Z1  0.142000000000000       0.142000106001398       0.142000106001399     
+  0.142000106001399       0.142000106001399       0.142000106001399     
+  0.142000106001398       0.142000106001399       0.142000106001398     
+  0.142000106001397       0.142000106001397       0.142000106001396     
+  0.142000106001398       0.142000106001396       0.142000106001394     
+  0.142000106001397       0.142000106001393     
+ T1   2.07800000000000        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688        2.07799836093688     
+   2.07799836093688        2.07799836093688     
+ R_loc  0.927008554655426       0.927008554655427       0.927008554655428     
+  0.927008554655429       0.927008554655429       0.927008554655424     
+  0.927008554655429       0.927008554655424       0.927008554655419     
+  0.927008554655416       0.927008554655407       0.927008554655424     
+  0.927008554655412       0.927008554655395       0.927008554655417     
+  0.927008554655393     
+ Tau  1.000000000000000E-002
+ End of DG2D Initial
+ a_max   5.38748089001123     
+ dt =   2.230955620003268E-004 Deg=           6 dt_eq  3.066084704769833E-006
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 0.9293
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.6653
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.4266
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 0.9297
+ time=  2.230955620003268E-004
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 0.9486
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.5401
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.3476
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 0.9497
+ time=  4.461911240006536E-004
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 0.9772
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.4445
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.2914
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 0.9789
+ time=  6.692866860009805E-004
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0097
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.3723
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.2522
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0120
+ time=  8.923822480013073E-004
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0423
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.3182
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.2254
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0451
+ time=  1.115477810001634E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0728
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.2783
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.2076
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0758
+ time=  1.338573372001961E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0997
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.2491
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1961
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1028
+ time=  1.561668934002288E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1224
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.2280
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1888
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1252
+ time=  1.784764496002615E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1405
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.2128
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1843
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1430
+ time=  2.007860058002942E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1542
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.2020
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1813
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1562
+ time=  2.230955620003269E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1640
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1941
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1792
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1652
+ time=  2.454051182003595E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1701
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1883
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1774
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1706
+ time=  2.677146744003922E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1732
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1838
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1755
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1728
+ time=  2.900242306004249E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1737
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1799
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1733
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1725
+ time=  3.123337868004576E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1721
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1764
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1707
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1701
+ time=  3.346433430004903E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1690
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1730
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1676
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1661
+ time=  3.569528992005230E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1647
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1694
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1641
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1609
+ time=  3.792624554005557E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1595
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1656
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1601
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1550
+ time=  4.015720116005883E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1538
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1615
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1559
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1486
+ time=  4.238815678006210E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1478
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1572
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1513
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1420
+ time=  4.461911240006537E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1416
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1526
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1466
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1353
+ time=  4.685006802006864E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1356
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1478
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1418
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1288
+ time=  4.908102364007191E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1297
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1429
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1370
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1226
+ time=  5.131197926007518E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1240
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1379
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1323
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1167
+ time=  5.354293488007845E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1187
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1329
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1276
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1113
+ time=  5.577389050008172E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1138
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1279
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1232
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1063
+ time=  5.800484612008498E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1093
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1231
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1189
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1017
+ time=  6.023580174008825E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1052
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1184
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1150
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0977
+ time=  6.246675736009152E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1016
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1140
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1113
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0942
+ time=  6.469771298009479E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0983
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1099
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1079
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0911
+ time=  6.692866860009806E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0955
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1060
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1049
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0885
+ time=  6.915962422010133E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0931
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1025
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1022
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0864
+ time=  7.139057984010460E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0910
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0993
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0998
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0846
+ time=  7.362153546010787E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0893
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0965
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0978
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0833
+ time=  7.585249108011114E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0880
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0941
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0961
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0823
+ time=  7.808344670011440E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0869
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0921
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0947
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0817
+ time=  8.031440232011767E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0861
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0904
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0936
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0813
+ time=  8.254535794012093E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0856
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0890
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0928
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0812
+ time=  8.477631356012419E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0854
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0880
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0922
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0814
+ time=  8.700726918012745E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0853
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0873
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0919
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0817
+ time=  8.923822480013071E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0854
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0869
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0918
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0823
+ time=  9.146918042013397E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0857
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0868
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0919
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0830
+ time=  9.370013604013723E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0862
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0869
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0922
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0838
+ time=  9.593109166014049E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0867
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0873
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0926
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0848
+ time=  9.816204728014375E-003
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0874
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0878
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0931
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0858
+ time=  1.003930029001470E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0882
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0886
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0938
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0870
+ time=  1.026239585201503E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0891
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0894
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0946
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0882
+ time=  1.048549141401535E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0900
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0904
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0954
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0895
+ time=  1.070858697601568E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0910
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0915
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0963
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0907
+ time=  1.093168253801600E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0921
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0927
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0973
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0921
+ time=  1.115477810001633E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0931
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0940
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0983
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0934
+ time=  1.137787366201666E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0942
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0953
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.0994
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0948
+ time=  1.160096922401698E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0954
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0967
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1004
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0961
+ time=  1.182406478601731E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0965
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0981
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1015
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0975
+ time=  1.204716034801764E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0977
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.0995
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1026
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.0988
+ time=  1.227025591001796E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.0989
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1009
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1037
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1001
+ time=  1.249335147201829E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1000
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1023
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1048
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1014
+ time=  1.271644703401861E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1012
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1037
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1058
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1027
+ time=  1.293954259601894E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1023
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1050
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1069
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1039
+ time=  1.316263815801927E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1034
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1064
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1080
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1051
+ time=  1.338573372001959E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1046
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1077
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1090
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1063
+ time=  1.360882928201992E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1056
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1089
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1100
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1074
+ time=  1.383192484402024E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1067
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1101
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1110
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1085
+ time=  1.405502040602057E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1078
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1113
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1119
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1096
+ time=  1.427811596802090E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1088
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1124
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1128
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1106
+ time=  1.450121153002122E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1098
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1135
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1137
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1116
+ time=  1.472430709202155E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1107
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1145
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1146
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1125
+ time=  1.494740265402187E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1116
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1155
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1154
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1134
+ time=  1.517049821602220E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1125
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1164
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1162
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1143
+ time=  1.539359377802253E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1134
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1173
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1169
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1151
+ time=  1.561668934002285E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1142
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1181
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1176
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1159
+ time=  1.583978490202318E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1150
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1189
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1183
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1166
+ time=  1.606288046402351E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1158
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1196
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1190
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1173
+ time=  1.628597602602383E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1165
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1203
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1196
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1180
+ time=  1.650907158802416E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1172
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1209
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1202
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1186
+ time=  1.673216715002449E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1178
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1215
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1207
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1192
+ time=  1.695526271202482E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1185
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1221
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1213
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1197
+ time=  1.717835827402514E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1190
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1226
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1218
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1203
+ time=  1.740145383602547E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1196
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1231
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1222
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1208
+ time=  1.762454939802580E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1201
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1235
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1227
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1212
+ time=  1.784764496002613E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1206
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1240
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1231
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1217
+ time=  1.807074052202646E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1211
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1243
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1235
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1221
+ time=  1.829383608402678E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1216
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1247
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1239
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1225
+ time=  1.851693164602711E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1220
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1250
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1242
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1228
+ time=  1.874002720802744E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1224
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1253
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1245
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1231
+ time=  1.896312277002777E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1228
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1256
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1248
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1235
+ time=  1.918621833202809E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1231
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1259
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1251
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1237
+ time=  1.940931389402842E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1235
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1261
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1254
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1240
+ time=  1.963240945602875E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1238
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1263
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1256
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1243
+ time=  1.985550501802908E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1241
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1265
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1258
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1245
+ time=  2.007860058002940E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1243
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1267
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1261
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1247
+ time=  2.030169614202973E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1246
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1268
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1263
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1249
+ time=  2.052479170403006E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1248
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1270
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1264
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1251
+ time=  2.074788726603039E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1251
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1271
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1266
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1253
+ time=  2.097098282803072E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1253
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1272
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1268
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1255
+ time=  2.119407839003104E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1255
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1274
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1269
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1256
+ time=  2.141717395203137E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1257
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1275
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1271
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1258
+ time=  2.164026951403170E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1259
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1276
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1272
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1259
+ time=  2.186336507603203E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1260
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1276
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1274
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1261
+ time=  2.208646063803235E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1262
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1277
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1275
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1262
+ time=  2.230955620003268E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1264
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1278
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1276
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1263
+ time=  2.253265176203301E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1265
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1279
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1277
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1265
+ time=  2.275574732403334E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1266
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1280
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1278
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1266
+ time=  2.297884288603367E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1268
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1280
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1279
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1267
+ time=  2.320193844803399E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1269
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1281
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1280
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1268
+ time=  2.342503401003432E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1271
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1281
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1281
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1269
+ time=  2.364812957203465E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1272
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1282
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1282
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1270
+ time=  2.387122513403498E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1273
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1283
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1283
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1272
+ time=  2.409432069603530E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1274
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1283
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1284
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1273
+ time=  2.431741625803563E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1276
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1284
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1285
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1274
+ time=  2.454051182003596E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1277
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1285
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1287
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1275
+ time=  2.476360738203629E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1278
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1286
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1288
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1276
+ time=  2.498670294403662E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1279
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1286
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1289
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1277
+ time=  2.520979850603694E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1281
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1287
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1290
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1279
+ time=  2.543289406803727E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1282
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1288
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1291
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1280
+ time=  2.565598963003760E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1283
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1289
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1292
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1281
+ time=  2.587908519203793E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1284
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1290
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1293
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1282
+ time=  2.610218075403825E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1286
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1291
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1294
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1284
+ time=  2.632527631603858E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1287
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1292
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1295
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1285
+ time=  2.654837187803891E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1288
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1293
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1297
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1286
+ time=  2.677146744003924E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1290
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1294
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1298
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1288
+ time=  2.699456300203957E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1291
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1295
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1299
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1289
+ time=  2.721765856403989E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1293
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1296
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1301
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1291
+ time=  2.744075412604022E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1294
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1297
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1302
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1292
+ time=  2.766384968804055E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1296
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1298
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1303
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1294
+ time=  2.788694525004088E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1297
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1300
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1305
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1295
+ time=  2.811004081204120E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1299
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1301
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1306
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1297
+ time=  2.833313637404153E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1301
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1303
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1308
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1299
+ time=  2.855623193604186E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1302
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1304
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1309
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1300
+ time=  2.877932749804219E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1304
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1305
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1311
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1302
+ time=  2.900242306004252E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1306
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1307
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1313
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1304
+ time=  2.922551862204284E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1307
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1309
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1314
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1306
+ time=  2.944861418404317E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1309
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1310
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1316
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1308
+ time=  2.967170974604350E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1311
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1312
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1318
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1310
+ time=  2.989480530804383E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1313
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1314
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1319
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1311
+ time=  3.011790087004415E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1315
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1315
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1321
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1313
+ time=  3.034099643204448E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1316
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1317
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1323
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1315
+ time=  3.056409199404481E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1318
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1319
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1325
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1317
+ time=  3.078718755604514E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1320
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1321
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1326
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1319
+ time=  3.101028311804547E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1322
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1323
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1328
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1321
+ time=  3.123337868004579E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1324
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1325
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1330
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1323
+ time=  3.145647424204612E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1326
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1326
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1332
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1325
+ time=  3.167956980404645E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1328
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1328
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1334
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1328
+ time=  3.190266536604677E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1330
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1330
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1336
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1330
+ time=  3.212576092804710E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1332
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1332
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1338
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1332
+ time=  3.234885649004743E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1334
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1334
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1340
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1334
+ time=  3.257195205204776E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1336
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1336
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1342
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1336
+ time=  3.279504761404808E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1339
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1338
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1344
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1338
+ time=  3.301814317604841E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1341
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1340
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1345
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1340
+ time=  3.324123873804874E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1343
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1342
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1347
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1342
+ time=  3.346433430004907E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1345
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1345
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1349
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1345
+ time=  3.368742986204940E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1347
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1347
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1351
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1347
+ time=  3.391052542404972E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1349
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1349
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1353
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1349
+ time=  3.413362098605005E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1351
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1351
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1355
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1351
+ time=  3.435671654805038E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1353
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1353
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1357
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1353
+ time=  3.457981211005071E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1355
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1355
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1359
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1355
+ time=  3.480290767205103E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1357
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1357
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1361
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1357
+ time=  3.502600323405136E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1360
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1359
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1363
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1360
+ time=  3.524909879605169E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1362
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1361
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1365
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1362
+ time=  3.547219435805202E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1364
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1363
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1367
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1364
+ time=  3.569528992005234E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1366
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1365
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1369
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1366
+ time=  3.591838548205267E-002
+ Domain #:    120  at x=: 0.5000  at y=: 0.5000  Density= 1.1368
+ Domain #:    121  at x=: 0.5000  at y=: 0.5000  Density= 1.1368
+ Domain #:    136  at x=: 0.5000  at y=: 0.5000  Density= 1.1371
+ Domain #:    137  at x=: 0.5000  at y=: 0.5000  Density= 1.1368
+ time=  3.614148104405300E-002

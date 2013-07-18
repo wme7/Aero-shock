@@ -18,6 +18,7 @@ main.o: dispmodule.o mathmodule.o main.f90
 clean:
 	rm *.o
 	rm *.mod
+	rm runme
 	#rm $(objects)
 	#rm some.mod runme
 # End of the makefile

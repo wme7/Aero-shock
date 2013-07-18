@@ -1,0 +1,322 @@
+
+This directory contains source code for the NITSOL package, some
+auxiliary software, and several example applications.
+
+Building NITSOL
+
+If you are the impatient type and just want to get on with it, just
+type
+
+     make
+
+to build the package and several example codes.  If you want to find
+out more about the make options, type
+
+     make help
+
+
+NITSOL Documentation
+
+Currently documentation for using NITSOL may be found in comments at
+the beginning of each source code file.  See in particular the
+comments in nitsol.f.  A more extensive user guide is planned.
+
+
+Source code Directories:
+
+Nitsol - source code for the NITSOL package:
+      nitbd.f    nitbt.f    nitdrv.f   nitgm.f
+      nitjv.f    nitsol.f   nitstb.f   nittfq.f
+
+In addition, several header files contain global declarations and
+definitions:
+      nitdflts.h   nitinfo.h   nitparam.h   nitprint.h
+
+Lapack - source code for LAPACK routines needed by NITSOL:
+      dlaic1.f dlamch.f 
+
+This subset of LAPACK is provided just for convenience.  We recommend
+that you link to a local installation of the library archive.  This
+may be done by modifying the Makefile in this directory to change the
+definition of the LAPACK macro.  Depending on the local installation,
+you might be able to link with the local installation of LAPACK by
+setting
+
+   LAPACK = -llapack
+
+in the Makefile.  At some installations the LAPACK library archive may
+be in a directory that is not among the default search paths, or the
+name of the library archive may not conform to the usual UNIX archive
+naming convention.  Consult your local system administrator for the
+appropriate information.
+
+Blas - source code for BLAS routines needed by NITSOL:
+      daxpy.f    dcopy.f    ddot.f     dnrm2.f    dscal.f    dswap.f
+
+This subset of BLAS is provided just for convenience.  We recommend
+that you link to a local installation of the library archive.  This
+may be done by modifying the Makefile in this directory to change the
+definition of the BLAS macro.  Depending on the local installation,
+you might be able to link with the local installation of LAPACK by
+setting
+
+   BLAS = -lblas
+
+in the Makefile.  At some installations the BLAS library archive may
+be in a location that is not among the default search paths, or the
+name of the library archive may not conform to the usual UNIX archive
+naming convention.  Consult your local system administrator for the
+appropriate information.
+
+If you are successful in linking to a local installation of LAPACK
+and/or BLAS, remember to remove the dependencies on lapack_lib and/or
+blas_lib from the Makefile to avoid unnecessary recompilations.
+
+
+Application directories:
+
+Several sample applications are provided to illustrate the use of
+NITSOL and to check the installation.  Each is in its own directory:
+
+Bratu      - generalized Bratu problem
+Cavity     - flow in driven cavity problem (OLD driver)
+Pormed     - flow in porous media (steady-state version)
+
+To build:  The applications each have a specific target name:
+      Bratu      - bratu
+      Cavity     - cavity
+      Pormed     - pormed
+
+To build an application, merely type "make <application>".  The
+Makefile will automatically check whether the NITSOL library should be
+built, then compiles the files needed for the requested application.
+
+
+Checking the installation:
+
+The following output from the three sample applications is provided to
+facilitate checking the installation.  The output was obtained on an
+SGI Indy equipped with an R4600 microprocessor.  (In the following "%"
+is the generic UNIX command prompt).
+
+% bratu
+  Type problem parameters nx, d, lambda:
+63 32. 8.
+ Type ikrysl, irpre (0-1), and ijacv (0-1):
+-------------------------------------------------------------
+ikrysl = 0 => GMRES
+         1 => BiCGSTAB
+         2 => TFQMR
+irpre  = 0 => no right preconditioning
+         1 => right preconditioning
+ijacv  = 0 => finite-difference J*v
+         1 => analytic J*v
+-------------------------------------------------------------
+0 1 1
+  Type maximum Krylov subspace dimension:
+50
+  Choice of forcing term:
+0
+ Type iplvl (informational printout level), and ipunit (printout unit):
+ iplvl = 0 => no printout, 
+       = 1 => iteration number and F-norm, 
+       = 2 => ... + stats, step-norm, lin model norm,
+       = 3 => ... + some Krylov method and backtrack info.
+       = 4 => ... + more Krylov method and backtrack info.
+1 6
+
+
+ Solve generalized Bratu problem using Newton-GMRES   
+        GMRES restart value:   50
+ Use Choice 1 for forcing term
+ Preconditioner is a fast Poisson solver
+ Use analytic J*v evaluations
+ Problem parameters:
+     nx:  63      n:     3969       d: 3.20E+01 lambda:8.00E+00
+ ftol: 1.23E-07                stptol: 1.00E-06
+ Initial f-norm:               1.230E-01
+
+
+ nitdrv:  Beginning nonlinear iterations.
+
+    It. no.   0      F norm =   1.230D-01
+
+    It. no.   1      F norm =   5.187D-02
+
+    It. no.   2      F norm =   1.663D-02
+
+    It. no.   3      F norm =   2.054D-03
+
+    It. no.   4      F norm =   7.175D-08
+
+
+ nitdrv:  Terminating nonlinear iterations.
+
+ Termination flag iterm:               0
+ Final f-norm:                     7.175E-08
+ No. function evaluations:             5
+ No. J*v evaluations:                 41
+ No. P(inverse)*v evaluations:        45
+ No. linear iterations:               41
+ No. nonlinear iterations:             4
+ No. backtracks:                       0
+  To go, type 0; to stop, type 1:
+1
+
+% cavity
+  Type problem parameters nx, Re (Reynold's number): 
+63 1000
+ Type ikrysl, irpre (0-1), and ijacv (0-1):
+-------------------------------------------------------------
+ikrysl = 0 => GMRES
+         1 => BiCGSTAB
+         2 => TFQMR
+irpre  = 0 => no right preconditioning
+         1 => right preconditioning
+-------------------------------------------------------------
+0 1
+  Type kdmax = maximum Krylov subspace dimension:
+200
+  Type ifdord = order of finite-difference formula:
+1
+ Type iplvl (informational printout level), and ipunit (printout unit):
+ iplvl = 0 => no printout, 
+       = 1 => iteration number and F-norm, 
+       = 2 => ... + stats, step-norm, lin model norm,
+       = 3 => ... + some Krylov method and backtrack info.
+       = 4 => ... + more Krylov method and backtrack info.
+1 6
+
+
+ Solve driven cavity problem using Newton-GMRES   
+ Preconditioner is biharmonic solver with Cholesky decomposition.
+ Use  1-th order finite differences for Jacobian
+ Problem parameters:
+   nx:   63         n:   3969      Reynolds number: 1000.0
+   ftol: 1.000E-08  stptol:  1.016E-07
+ Initial f-norm:               1.016E+00
+
+
+ nitdrv:  Beginning nonlinear iterations.
+
+    It. no.   0      F norm =   1.016D+00
+
+    It. no.   1      F norm =   2.935D-01
+
+    It. no.   2      F norm =   2.220D-01
+
+    It. no.   3      F norm =   1.137D-01
+
+    It. no.   4      F norm =   7.950D-02
+
+    It. no.   5      F norm =   5.423D-02
+
+    It. no.   6      F norm =   4.517D-02
+
+    It. no.   7      F norm =   3.720D-02
+
+    It. no.   8      F norm =   3.006D-02
+
+    It. no.   9      F norm =   2.633D-02
+
+    It. no.  10      F norm =   1.652D-02
+
+    It. no.  11      F norm =   9.931D-03
+
+    It. no.  12      F norm =   4.218D-03
+
+    It. no.  13      F norm =   9.233D-04
+
+    It. no.  14      F norm =   8.741D-06
+
+    It. no.  15      F norm =   7.314D-08
+
+
+ nitdrv:  Terminating nonlinear iterations.
+
+ Termination flag iterm:               0
+ Final f-norm:                     7.314E-08
+ No. function evaluations:           296
+ No. J*v evaluations:                277
+ No. P(inverse)*v evaluations:       292
+ No. linear iterations:              277
+ No. nonlinear iterations:            15
+ No. backtracks:                       3
+  To go, type 0; to stop, type 1:
+1
+
+% pormed
+  Type problem parameters nx, d, bll, bur, src:
+63 -50. 1. 0. 50.
+ Type ikrysl, irpre (0-1), and ijacv (0-1):
+-------------------------------------------------------------
+ikrysl = 0 => GMRES
+         1 => BiCGSTAB
+         2 => TFQMR
+irpre  = 0 => no right preconditioning
+         1 => right preconditioning
+ijacv  = 0 => finite-difference J*v
+         1 => analytic J*v
+-------------------------------------------------------------
+2 1 0
+  Type tol and fill for incomplete factorization:
+0.0 4
+  Type ifdord = order of finite-difference formula:
+1
+  Choice of forcing term:
+1
+ Type iplvl (informational printout level), and ipunit (printout unit):
+ iplvl = 0 => no printout, 
+       = 1 => iteration number and F-norm, 
+       = 2 => ... + stats, step-norm, lin model norm,
+       = 3 => ... + some Krylov method and backtrack info.
+       = 4 => ... + more Krylov method and backtrack info.
+1 6
+
+
+ Solve flow in porous media problem using Newton-TFQMR   
+ Use Choice 2 for forcing term
+        alpha = 2.00E+00 gamma = 1.00E+00
+ Preconditioner is ILUT(0.00, 4)
+ Use  1-th order finite differences for Jacobian
+ Problem parameters:
+  nx:     63       n:     3969     d:-5.00E+01   bll:1.000E+00   bur:0.000E+00   src:5.00E+01
+ftol: 4.18E-06   stptol: 1.00E-06
+ Initial f-norm:               4.178E+00
+
+
+ nitdrv:  Beginning nonlinear iterations.
+
+    It. no.   0      F norm =   4.178D+00
+
+    It. no.   1      F norm =   1.118D+00
+
+    It. no.   2      F norm =   9.369D-01
+
+    It. no.   3      F norm =   4.527D-01
+
+    It. no.   4      F norm =   3.072D-01
+
+    It. no.   5      F norm =   1.981D-01
+
+    It. no.   6      F norm =   3.820D-02
+
+    It. no.   7      F norm =   1.087D-02
+
+    It. no.   8      F norm =   7.204D-04
+
+    It. no.   9      F norm =   3.335D-07
+
+
+ nitdrv:  Terminating nonlinear iterations.
+
+ Termination flag iterm:               0
+ Final f-norm:                     3.335E-07
+ No. function evaluations:            59
+ No. J*v evaluations:                 47
+ No. P(inverse)*v evaluations:        38
+ No. linear iterations:               19
+ No. nonlinear iterations:             9
+ No. backtracks:                       2
+  To go, type 0; to stop, type 1:
+1
