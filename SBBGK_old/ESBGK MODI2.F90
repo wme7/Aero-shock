@@ -2,22 +2,22 @@ program SEMIBES2D
 implicit real(8) (a-h,o-z)
 integer igh,imaxgridx,imaxgridy,mm
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
-real, dimension (igh,igh,imaxgridx,imaxgridy) 	:: f,feq
-real, dimension (imaxgridx,imaxgridy)         	:: ux,uy,z,t,r,et,p,pxx,pxy,pyy
+real, dimension (igh,igh,imaxgridx,imaxgridy) 	:: fes,f
+real, dimension (imaxgridx,imaxgridy)         	:: r,ux,uy,t,et,z,pxx,pxy,pyy,p,qx,qy,wxx,wxy,wyy,lxx,lxy,lyy
 real, dimension (imaxgridx)			:: x,y  !/imaxgridy assuming symm. domain
 real, dimension (igh)				:: c,v
-!	A Direct solver authored by Bagus p. Muljadi (d97543016@ntu.edu.tw)
-!	For solving 2D-Riemann problems of semiclassical Boltzmann-ES Equation
-!	using TVD and Discrete Ordinate Method
-mx			= 50
-my			= 50
+!	A Direct Solver for Solving 2D-Riemann problems of Semiclassical Boltzmann-ES Equation
+!	Using TVD and Discrete Ordinate Method
+mx			= 200
+my			= 200
 nx          = mx+3	
 ny          = my+3	
-cfl         = 0.6
+bb          = -0.5
+cfl         = 0.2
 outtime     = 0.2
-theta       = 0.	! maxwellian = 0., fermion = 1., boson = -1.
-isolver		= 0		! euler = 0, navier-stokes & beyond = 1
-r_time		= 0.01	! relaxation time (tau)
+theta       = -1     !Maxwellian = 0., fermion = 1., boson = -1
+isolver		= 1		! euler = 0, navier-stokes & beyond = 1
+r_time		= 0.0001	! relaxation time (tau)
 nv			= 20 	! discretized velocity points (uniform for vx and vy)
 open (unit = 10, file = 'abscissas.tec', status = 'unknown')
 open (unit = 20, file = 'sv_point(1).tec', status = 'unknown')
@@ -29,40 +29,43 @@ open (unit = 60, file = 'results.tec', status = 'unknown')
 	write(20,*) 'zone t="sv_point(1)",i=',nx-2,',j=',ny-2
     write(30,*) 'zone t="sv_point(2)",i=',nx-2,',j=',ny-2
     write(60,*) 'zone t="results",i=',nx-2,',j=',ny-2
-888 format ('variables = "x","y","n","p","z"')    
+	888 format ('variables = "x","y","n","p","z","t","ux","uy","pxx","pxy","pyy","qx","qy","wxx","wxy","wyy"')    
 call weightings_gauss_hermite (nv,c,v)
 call quadrants_vals(z1,ux1,uy1,t1,z2,ux2,uy2,t2,z3,ux3,uy3,t3,z4,ux4,uy4,t4)
 call grid2 (nx,ny,dx,dy,x,y)
-call initialization (nv,nx,ny,x,y,theta,z1,ux1,uy1,t1,z2,ux2,uy2,t2,z3,ux3,uy3,t3,z4,ux4,uy4,t4,v,z,ux,uy,t,f)
+call initialization (nv,nx,ny,x,y,theta,z1,ux1,uy1,t1,z2,ux2,uy2,t2,z3,ux3,uy3,t3,z4,ux4,uy4,t4,v,z,ux,uy,t,fes,f)
 iter  = 1
 time  = 0
 istop = 0
 1000 continue
-call caldt (nv,dx,dy,cfl,istop,time,outtime,v,dt,dtdx,dtdy)
-call equilibrium (nv,nx,ny,theta,v,z,ux,uy,t,feq)
-	if (isolver.eq.0) then
-	call eu_projection (nx,ny,nv,f,feq)
+call caldt (nv,dx,dy,cfl,istop,time,outtime,v,dt,dtdx,dtdy,r_time)
+ 
+!call equilibrium (nv,nx,ny,theta,v,z,ux,uy,t,feq)
+!call equilibriumes (nv,nx,ny,theta,v,ux,uy,z,lxx,lxy,lyy,fes)
+	if (isolver .eq. 0) then
+ 	!call eu_projection (nx,ny,nv,f,feq)
+	call eseu_projection (nx,ny,nv,f,fes)
 	end if
-call iteration (nv,nx,ny,dtdx,dtdy,dt,r_time,feq,v,f)
-call caldom (nx,ny,nv,c,v,f,r,ux,uy,et,z,t,p,pxx,pxy,pyy)
+call iteration (nv,nx,ny,dtdx,dtdy,dt,r_time,fes,v,f)
+call caldom (nx,ny,nv,c,v,f,r,ux,uy,et,pxx,pxy,pyy,p,qx,qy)
+call espxywxy (nx,ny,bb,pxx,pxy,pyy,p,wxx,wxy,wyy)
 	if (theta .eq. 0.) go to 1100
-call bisect_ztp (nx,ny,theta,r,ux,uy,et,z,t,p)
+!call bisect_ztp (nx,ny,theta,r,ux,uy,et,z,t,p)
+call bisect_zlxyes (nx,ny,theta,r,wxx,wxy,wyy,z,lxx,lxy,lyy,t)
+call equilibriumes (nv,nx,ny,theta,v,ux,uy, z,lxx,lxy,lyy,fes)
 go to 1300
 1100 continue
-call maxwellian_ztp (nx,ny,r,ux,uy,et,z,t,p)
-   
+!call maxwellianes_ztp (nx,ny,r,ux,uy,et,z,t,p)
+call eqesmb (nv,nx,ny,bb,v,r,ux,uy,p,wxx,wxy,wyy,z,lxx,lxy,lyy,fes,t,et)
 1300 continue
-!call wrt_savingpoints (nx,ny,iter,outtime,dt,x,y,r,p,z)
-call wrt_savingpoints(nx,ny,iter,outtime,dt,x,y,r,p,z,t,ux,uy,pxx,pxy,pyy)
+call wrt_savingpoints (nx,ny,iter,outtime,dt,x,y,r,p,z,t,ux,uy,pxx,pxy,pyy)
 write(*,777) time, r(nx/2,ny/2)
 777	format (1X,'Elapsed time:',F7.4,4X, 'Density at x=0.5,y=0.5:',F7.4)
-if (istop .eq. 1) goto 2000
+if (istop .eq. 1) go to 2000
 iter = iter + 1
-goto 1000
+go to 1000
 2000 continue
-
-!call wrt_results (nx,ny,x,y,r,p,z)
-call wrt_results(nx,ny,x,y,r,p,z,t,ux,uy,pxx,pxy,pyy)
+call wrt_results (nx,ny,x,y,r,p,z,t,ux,uy,pxx,pxy,pyy,qx,qy,wxx,wxy,wyy)
 stop
 end program    
 !==================!				   
@@ -86,7 +89,25 @@ real(8) z1,ux1,uy1,t1,z2,ux2,uy2,t2,z3,ux3,uy3,t3,z4,ux4,uy4,t4
     Z4   = 0.6635
     UX4  = 0.75
     UY4  = -0.5
-    T4   = 0.87685
+      T4   = 0.87685
+! the other one
+    !Z1   = 0.14
+    !UX1  = 0.1
+    !UY1  = -0.4
+    !T1   = 2.08
+    !Z2   = 0.37
+    !UX2  = 0
+    !UY2  = -0.3
+    !T2   = 1.25
+    !Z3   = 0.38
+    !UX3  = 0
+    !UY3  = 0.12
+    !T3   = 0.77
+    !Z4   = 0.14
+    !UX4  = 0
+    !UY4  = -0.98
+    !T4   = 1.31
+
 return
 end subroutine
 !
@@ -136,16 +157,17 @@ end do
 return
 end subroutine
 !
-subroutine initialization (nv,nx,ny,x,y,theta,z1,ux1,uy1,t1,z2,ux2,uy2,t2,z3,ux3,uy3,t3,z4,ux4,uy4,t4,v,z,ux,uy,t,f)
+subroutine initialization (nv,nx,ny,x,y,theta,z1,ux1,uy1,t1,z2,ux2,uy2,t2,z3,ux3,uy3,t3,z4,ux4,uy4,t4,v,z,ux,uy,t,fes,f)
 implicit none
 integer igh,imaxgridx,imaxgridy
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
 integer k,l,i,j,nx,ny,nv
 real(8) z1,ux1,uy1,t1,z2,ux2,uy2,t2,z3,ux3,uy3,t3,z4,ux4,uy4,t4,pp,theta
-real, dimension (igh,igh,imaxgridx,imaxgridy) :: f
+real, dimension (igh,igh,imaxgridx,imaxgridy) :: fes,f
 real, dimension (imaxgridx,imaxgridy) :: z,ux,uy,t
 real, dimension (imaxgridx) :: x,y
 real, dimension (igh) :: v 
+! For IVP, initially at time=0, fes=feq, everything is in equilibrium, and set f=fes=feq to start.
 do i = 1,nx
   do j = 1,ny
 	if ((y(j) .le. 0.5) .and. (x(i) .ge. 0.5))  then
@@ -172,7 +194,8 @@ do i = 1,nx
 	do k = 1,nv
 	  do l = 1,nv
 		pp = ( (v(k)-ux(i,j))**2 + (v(l)-uy(i,j))**2 ) / t(i,j)
-		f(k,l,i,j) = 1/((exp(pp)/z(i,j))+theta)
+        fes(k,l,i,j) = 1/( exp(pp)/z(i,j) + theta )
+		f(k,l,i,j) = fes(k,l,i,j)
 	  end do
 	end do
   end do
@@ -194,37 +217,69 @@ do i = 1, nx
 	do k = 1,nv
 	  do l = 1,nv
            pp = ( (v(k)-ux(i,j))**2 + (v(l)-uy(i,j))**2 ) / t(i,j)
-		f0(k,l,i,j) = 1/((exp(pp)/z(i,j))+theta)
+		   f0(k,l,i,j) = 1/((exp(pp)/z(i,j))+theta)
 	  end do
 	end do
   end do
 end do
 return
 end subroutine
-!ESBGK MODEL
-subroutine equilibriumes (nv,nx,ny,theta,v,z,ux,uy,lxx,lxy,lyy,fes)
+!
+subroutine equilibriumes (nv,nx,ny,theta,v,ux,uy,z,lxx,lxy,lyy,fes)
 implicit none
 integer igh,imaxgridx,imaxgridy
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
 real,dimension (igh,igh,imaxgridx,imaxgridy) :: fes
-real,dimension (imaxgridx,imaxgridy) :: z,ux,uy,lxx,lxy,lyy
+real,dimension (imaxgridx,imaxgridy) :: ux,uy,z,lxx,lxy,lyy
 real,dimension (igh) :: v
 integer nv,nx,ny,k,l,i,j
-real(8) ppes,omega,theta
+real(8) omega,ppes,theta
 do i = 1, nx
 do j = 1, ny
+   omega=lxx(i,j)*lyy(i,j) - lxy(i,j)**2
 do k = 1,nv
  do l = 1,nv
-   ppes=(v(k)-ux(i,j))**2*lyy(i,j)  + (v(l)-uy(i,j))**2*lxx(i,j) -2*(v(k)-ux(i,j))*(v(l)-uy(i,j))*lxy(i,j)
-            omega=lxx(i,j)*lyy(i,j) - lxy(i,j)**2
-             fes(k,l,i,j) = 1/( exp(0.5*ppes/omega) /z(i,j) + theta )
+   ppes=(v(k)-ux(i,j))**2*lyy(i,j) + (v(l)-uy(i,j))**2*lxx(i,j) - 2*(v(k)-ux(i,j))*(v(l)-uy(i,j))*lxy(i,j)
+   fes(k,l,i,j) = 1/( exp(0.5*ppes/omega) /z(i,j) + theta )
 end do
 end do
 end do
 end do
 return
 end subroutine
+! The following subroutine calculate semiclassical es model for MB statistics (theta=0).
+subroutine eqesmb (nv,nx,ny,bb,v,r,ux,uy,p,pxx,pxy,pyy,z,lxx,lxy,lyy,fes,t,et)
+implicit none
+integer igh,imaxgridx,imaxgridy
+parameter (igh=20,imaxgridx=400,imaxgridy=400)
+real,dimension (igh,igh,imaxgridx,imaxgridy) :: fes
+real,dimension (imaxgridx,imaxgridy) :: r,ux,uy,p,pxx,pxy,pyy,z,lxx,lxy,lyy,t,et
+real,dimension (igh) :: v
+integer nv,nx,ny,k,l,i,j
+real(8) bb,omega,ppes,pi,theta
+pi = atan2(1.,1.)*4
+do i=1, nx
+do j=1, ny
 
+lxx(i,j) = (1 -bb)* p(i,j)/r(i,j) + bb*pxx(i,j)/r(i,j)
+lxy(i,j) = bb*pxy(i,j)/r(i,j)
+lyy(i,j) = (1-bb)*p(i,j)/r(i,j) + bb*pyy(i,j)/r(i,j)
+
+omega=(lxx(i,j)*lyy(i,j) - lxy(i,j)**2)
+z(i,j) = r(i,j)/(2 *pi*omega**0.5)
+t(i,j) = (2* et(i,j)/r(i,j))-(ux(i,j)**2+uy(i,j)**2)
+
+do k = 1,nv
+ do l = 1,nv
+   ppes=(v(k)-ux(i,j))**2*lyy(i,j)  + (v(l)-uy(i,j))**2*lxx(i,j) -2*(v(k)-ux(i,j))*(v(l)-uy(i,j))*lxy(i,j)
+   fes(k,l,i,j) = 1/( exp(0.5*ppes/omega)  /z(i,j) )
+end do
+end do
+end do
+end do
+return
+end subroutine
+!
 subroutine eu_projection (nx,ny,nv,f,f0)
 implicit none
 integer igh,imaxgridx,imaxgridy
@@ -242,7 +297,6 @@ do i = 1, nx
 end do
 return
 end subroutine
-
 subroutine eseu_projection (nx,ny,nv,f,fes)
 implicit none
 integer igh,imaxgridx,imaxgridy
@@ -253,7 +307,8 @@ do i = 1, nx
   do j = 1, ny
     do k = 1, nv
       do l = 1, nv
-        f(k,l,i,j) = fes(k,l,i,j)	
+        f(k,l,i,j) = fes(k,l,i,j)
+		!fl(k,l,i,j) = fes(k,l,i,j)
       end do
     end do  
   end do
@@ -261,17 +316,21 @@ end do
 return
 end subroutine
 !
-subroutine caldt (nv,dx,dy,cfl,istop,time,outtime,v,dt,dtdx,dtdy)
+subroutine caldt (nv,dx,dy,cfl,istop,time,outtime,v,dt,dtdx,dtdy,r_time)
 implicit none
 integer igh,imaxgridx,imaxgridy
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
-integer nv,istop
-real(8) dx,dy,cfl,time,outtime,dt,dtdx,dtdy,dtcfl
+integer nv,istop,i,j,nx,ny
+real(8) dx,dy,cfl,time,outtime,dt,dtdx,dtdy,dtcfl,r_time
+!real,dimension (imaxgridx,imaxgridy) :: ux
 real,dimension (igh) :: v
-dt = min(dx,dy) * cfl/v(nv)
-time = time + dt
-dtdx = dt/dx
-dtdy = dt/dy
+
+  dt = cfl/max(1/(2*r_time),1.5*v(nv)/dx)
+  !dt = min(dx,dy) * cfl/v(nv)
+  time = time + dt
+  dtdx = dt/dx
+  dtdy = dt/dy
+
 !    
 if (time .gt. outtime) then
     dtcfl = outtime - (time - dtcfl)  
@@ -281,89 +340,105 @@ if (time .gt. outtime) then
     dtdy = dtcfl / dy
     istop = 1
 end if
+
 return
 end subroutine
 !
-subroutine caldom (nx,ny,nv,c,v,f,r,ux,uy,et,t,z,p,pxx,pxy,pyy)
+subroutine caldom (nx,ny,nv,c,v,f,r,ux,uy,et,pxx,pxy,pyy,p,qx,qy)
 implicit none
 integer igh,imaxgridx,imaxgridy
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
 integer k,l,i,j,nx,ny,nv
-real(8) sr,sux,suy,se,spxx,spxy,spyy,pi
+real(8) sr,sux,suy,se,spxx,spxy,spyy,sqx,sqy,bb,pi
 real, dimension (igh) :: c,v
-real, dimension (imaxgridx,imaxgridy) :: r,ux,uy,et,t,z,p,pxx,pxy,pyy
+real, dimension (imaxgridx,imaxgridy) :: r,ux,uy,et,pxx,pxy,pyy,p,qx,qy,t
 real, dimension (igh,igh,imaxgridx,imaxgridy) :: f
-pi = atan2(1.,1.)*4.
+bb =0.5
+pi = atan2(1.,1.)*4
 do i = 1, nx
   do j = 1, ny
     sr  = 0
     sux = 0
     suy = 0
     se  = 0
-    spxx= 0
-    spxy= 0
-    spyy= 0
+    !spxx= 0
+    !spxy= 0
+    !spyy= 0
+    !sqx =0
+    !sqy=0
       do k = 1, nv
         do l = 1, nv
          sr  = sr + c(k)*c(l) * f(k,l,i,j)
          sux = sux + c(k)*c(l) * f(k,l,i,j) * v(k)
          suy = suy + c(k)*c(l) * f(k,l,i,j) * v(l)
          se  = se + c(k)*c(l) * f(k,l,i,j) * (0.5 * (v(k)*v(k) + v(l)*v(l)))
-         spxx = spxx + c(k)*c(l) * f(k,l,i,j)*(v(k) - ux(i,j))**2
-         spxy = spxy + c(k)*c(l) * f(k,l,i,j) * (v(k) - ux(i,j))*(v(l) -uy(i,j))
-         spyy = spyy + c(k)*c(l) * f(k,l,i,j) *( v(l) - uy(i,j))**2
+         !spxx  = spxx + c(k)*c(l) * f(k,l,i,j)*(v(k) - ux(i,j))**2
+         !spxy = spxy + c(k)*c(l) * f(k,l,i,j) * (v(k) - ux(i,j))*(v(l) -uy(i,j))
+         !spyy = spyy + c(k)*c(l) * f(k,l,i,j) *( v(l) - uy(i,j))**2
+         !sqx = sqx + c(k)*c(l) * f(k,l,i,j) *0.5*( (v(k) - ux(i,j))**2 + (v(l) - uy(i,j))**2 )*( v(k) - ux(i,j))
+         !sqy = sqy + c(k)*c(l) * f(k,l,i,j) *0.5*( (v(k) - ux(i,j))**2 + (v(l) - uy(i,j))**2 )*( v(l) - uy(i,j))
         end do
       end do
-    pxx(i,j)  = spxx
-    pxy(i,j)  = spxy 
-    pyy(i,j)  = spyy
     r(i,j)    = sr
     ux(i,j)   = sux/sr 
     uy(i,j)   = suy/sr
     et(i,j)   = se       
-  end do
+	!pxx(i,j)  = spxx
+    !pxy(i,j)  = spxy 
+    !pyy(i,j)  = spyy
+    !p(i,j) = (pxx(i,j) + pyy(i,j))/2
+    !qx(i,j) = sqx
+    !qy(i,j) = sqy
+	end do
 end do
-  !t(i,j) = (2* et(i,j)/r(i,j))-(ux(i,j)**2+uy(i,j)**2)
-  !z(i,j) = r(i,j)/(pi*t(i,j))
-  !p(i,j) = r(i,j)*t(i,j)/2
-        
-      !do k = 1, nv
-         !do l = 1, nv
-         !spxx = spxx + c(k)*c(l) * f(k,l,i,j)*(v(k) - ux(i,j))**2
-         !spxy = spxy + c(k)*c(l) * f(k,l,i,j) * (v(k) - ux(i,j))*(v(l) -uy(i,j))
-         !spyy = spyy + c(k)*c(l) * f(k,l,i,j) *( v(l) - uy(i,j))**2
-        !end do
-      !end do
+
+do i = 1, nx
+  do j = 1, ny
+    spxx= 0
+    spxy= 0
+    spyy= 0
+    sqx =0
+    sqy=0
+    do k = 1, nv
+      do l = 1, nv
+       spxx = spxx + c(k)*c(l) * f(k,l,i,j)*(v(k) - ux(i,j))**2
+       spxy = spxy + c(k)*c(l) * f(k,l,i,j) * (v(k) - ux(i,j))*(v(l) -uy(i,j))
+       spyy = spyy + c(k)*c(l) * f(k,l,i,j) *( v(l) - uy(i,j))**2
+       sqx = sqx + c(k)*c(l) * f(k,l,i,j) *0.5*( (v(k) - ux(i,j))**2 + (v(l) - uy(i,j))**2 )*( v(k) - ux(i,j))
+       sqy = sqy + c(k)*c(l) * f(k,l,i,j) *0.5*( (v(k) - ux(i,j))**2 + (v(l) - uy(i,j))**2 )*( v(l) - uy(i,j))
+      end do
+    end do
+    pxx(i,j)   = spxx
+    pxy(i,j)   = spxy 
+    pyy(i,j)   = spyy
     !pxx(i,j)   = spxx
     !pxy(i,j)   = spxy 
     !pyy(i,j)   = spyy
-     !end do
-  !end do
-
+    p(i,j) = (pxx(i,j) + pyy(i,j))/2
+    qx(i,j) = sqx
+    qy(i,j) = sqy
+	 end do
+ end do
+ 
 return
 end subroutine
-!The relationship between pxy and wxy
-subroutine espxywxy (nx,ny,bb,p,pxx,pxy,pyy,wxx,wxy,wyy)
+subroutine espxywxy (nx,ny,bb,pxx,pxy,pyy,p,wxx,wxy,wyy)
 implicit none
 integer igh,imaxgridx,imaxgridy
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
-real,dimension (igh,igh,imaxgridx,imaxgridy) :: fes
-real,dimension (imaxgridx,imaxgridy) :: p,pxx,pxy,pyy,wxx,wxy,wyy
-real,dimension (igh) :: v
+real,dimension (imaxgridx,imaxgridy) :: pxx,pxy,pyy,p,wxx,wxy,wyy
 integer nx,ny,k,l,i,j
-real(8) bb,ppes,omega
-
+real(8) bb
 do i = 1, nx
 do j = 1, ny
-   wxx(i,j) = 0.5* p(i,j) + 0.5*pxx(i,j) 
-   wxy(i,j) = 0.5* pxy(i,j)
-   wyy(i,j) = 0.5* p(i,j) + 0.5*pyy(i,j)
+   wxx(i,j) =(1 - bb )* p(i,j) + bb*pxx(i,j) 
+   wxy(i,j) = bb*pxy(i,j)
+   wyy(i,j) =(1 - bb )* p(i,j) + bb*pyy(i,j)
+ 
 end do
 end do
 return
 end subroutine
-
-!The relationship between wxy and lxy
 subroutine eswxylxy (nx,ny,bb,z,r,wxx,wxy,wyy,lxx,lxy,lyy)
 implicit none
 integer igh,imaxgridx,imaxgridy
@@ -372,7 +447,7 @@ real,dimension (igh,igh,imaxgridx,imaxgridy) :: fes
 real,dimension (imaxgridx,imaxgridy) :: z,r,wxx,wxy,wyy,lxx,lxy,lyy
 real,dimension (igh) :: v
 integer nx,ny,k,l,i,j
-real(8) bb,ppes,omega,theta,ga1,ga2
+real(8) bb,ppes,omega,ga1,ga2,theta
 do i = 1, nx
 do j = 1, ny
   !za = z(i,j)
@@ -388,8 +463,8 @@ do j = 1, ny
             ga2 = ga2 + (z(i,j)**l) /(l**2)
             end if    
         end do
-!ggrho=((ga1/ga2)/r(i,j))
-lxx(i,j) = wxx(i,j)*((ga1/ga2)/r(i,j))
+!ggrho=(ga1/ga2)/r(i,j)
+lxx(i,j) = wxx(i,j)*((ga1/ga2)/r(i,j)) 
 lxy(i,j) = wxy(i,j)*((ga1/ga2)/r(i,j))
 lyy(i,j) = wyy(i,j)*((ga1/ga2)/r(i,j))
 end do
@@ -408,7 +483,7 @@ pi = atan2(1.,1.)*4.
 do i = 1, nx
  do j = 1, ny
   za = 0.001
-  zb = 0.9
+  zb = 0.999
   do while (abs(za-zb) .gt. 0.0001)
     ga1 = 0
     gb1 = 0
@@ -451,25 +526,70 @@ do i = 1, nx
   z(i,j) = zc
   t(i,j) = r(i,j)/(pi*gc1)
   p(i,j) = et(i,j) - 0.5*r(i,j)*(ux(i,j)**2+uy(i,j)**2)
-  end do
+ end do
 end do
 return
 end subroutine
 !
-subroutine maxwellian_ztp (nx,ny,r,ux,uy,et,z,t,p)
+subroutine bisect_zlxyes (nx,ny,theta,r,wxx,wxy,wyy,z,lxx,lxy,lyy,t)
 implicit none
 integer igh,imaxgridx,imaxgridy
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
-integer nx,ny,i,j
-real(8) pi
-real,dimension (imaxgridx,imaxgridy) :: r,ux,uy,et,z,t,p
+integer l,i,j,nx,ny
+real(8) pi,za,zb,zc,ga1,gb1,gc1,ga2,gb2,gc2,gc1ogc2,psia,psib,psic,theta
+real, dimension (imaxgridx,imaxgridy)::r,wxx ,wxy ,wyy,z,lxx,lxy,lyy,t
 pi = atan2(1.,1.)*4.
 do i = 1, nx
  do j = 1, ny
-  t(i,j) = (2* et(i,j)/r(i,j))-(ux(i,j)**2+uy(i,j)**2)
-  z(i,j) = r(i,j)/(pi*t(i,j))
-  p(i,j) = r(i,j)*t(i,j)/2
-  end do
+  za = 0.001
+  zb = 0.999
+  do while (abs(za-zb) .gt. 0.0001)
+    ga1 = 0
+    gb1 = 0
+    ga2 = 0
+    gb2 = 0
+        do l = 1, 50
+            if (theta .eq. 1.) then      
+            ga1 = ga1 + (za**l) * (-1)**(l-1)/l
+            gb1 = gb1 + (zb**l) * (-1)**(l-1)/l
+            ga2 = ga2 + (za**l) * (-1)**(l-1)/(l**2)
+            gb2 = gb2 + (zb**l) * (-1)**(l-1)/(l**2)
+            else
+            ga1 = ga1 + (za**l) /l
+            gb1 = gb1 + (zb**l) /l
+            ga2 = ga2 + (za**l) /(l**2)
+            gb2 = gb2 + (zb**l) /(l**2)
+            end if    
+        end do
+    psia = 4*(pi**2)*(ga1**4)/ga2**2 - (r(i,j)**4/(wxx(i,j)*wyy(i,j) - wxy(i,j)**2))
+    psib = 4*(pi**2)*(gb1**4)/gb2**2 - (r(i,j)**4/(wxx(i,j)*wyy(i,j) - wxy(i,j)**2))
+    zc = (za+zb)/2
+    gc1 = 0
+    gc2 = 0
+        do l = 1, 50
+            if (theta .eq. 1.) then
+            gc1 = gc1 + (zc**l) * (-1)**(l-1)/l
+            gc2 = gc2 + (zc**l) * (-1)**(l-1)/(l**2)
+            else 
+            gc1 = gc1 + (zc**l)/l
+            gc2 = gc2 + (zc**l)/(l**2)
+            end if
+        end do
+    psic = 4*(pi**2)*(gc1**4)/gc2**2 - (r(i,j)**4/(wxx(i,j)*wyy(i,j) - wxy(i,j)**2))
+    if ((psia*psic) .lt. 0) then
+        zb = zc
+    else
+        za = zc
+    end if
+   end do
+  z(i,j) = zc
+  t(i,j) = r(i,j)/(pi*gc1)
+  gc1ogc2=gc1/gc2
+  lxx(i,j) = wxx(i,j)*gc1ogc2/r(i,j)
+  lxy(i,j) = wxy(i,j)*gc1ogc2/r(i,j)
+  lyy(i,j)=  wyy(i,j)*gc1ogc2/r(i,j)
+
+end do
 end do
 return
 end subroutine
@@ -481,7 +601,7 @@ parameter (igh=20,imaxgridx=400,imaxgridy=400)
 integer iter,i,j,nx,ny
 real(8)	dt,sv_point1,sv_point2,outtime
 real,dimension (imaxgridx) :: x,y
-real,dimension (imaxgridx,imaxgridy) :: r,p,z,ux,uy,pxx,pxy,pyy,t
+real,dimension (imaxgridx,imaxgridy) :: r,p,z, t,ux,uy,pxx,pxy,pyy
 sv_point1 = (1./3.)*outtime   
 sv_point2 = (2./3.)*outtime
 do i = 2, nx-1
@@ -496,7 +616,7 @@ end do
 return
 end subroutine
 !
-subroutine iteration (nv,nx,ny,dtdx,dtdy,dt,r_time,feq,v,f)
+subroutine iteration (nv,nx,ny,dtdx,dtdy,dt,r_time,fes,v,f)
 implicit none
 integer igh,imaxgridx,imaxgridy
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
@@ -504,7 +624,7 @@ integer k,l,i,j,nv,nx,ny
 real(8)	vxp,vxm,vyp,vym,dtdx,dtdy,dt,r_time
 real,dimension (igh) :: v
 real,dimension (imaxgridx,imaxgridy) ::fn,fl,fh,gl,gh2
-real,dimension (igh,igh,imaxgridx,imaxgridy) :: f,feq
+real,dimension (igh,igh,imaxgridx,imaxgridy) :: f,fes
 do k = 1, nv
   do l = 1, nv
     vxp = max(v(k),0.)
@@ -512,10 +632,11 @@ do k = 1, nv
     vyp = max(v(l),0.)
     vym = min(v(l),0.)
     call tvdfluxes (nx,ny,k,l,vxp,vxm,vyp,vym,dtdx,dtdy,v,f,fl,fh,gl,gh2)
-	call explicit (k,l,nx,ny,fl,fh,gl,gh2,dt,dtdx,dtdy,feq,f,r_time,fn)
+    call esexplicit (k,l,nx,ny,fl,fh,gl,gh2,dt,dtdx,dtdy,fes,f,r_time,fn)
 	do i = 2,nx-1
 	  do j = 2,ny-1
-		f(k,l,i,j) = fn(i,j)
+		!f(k,l,i,j) = fn(i,j)
+         f(k,l,i,j) = fn(i,j)
 	    call b_cond (k,l,i,j,nx,ny,fn,f)
 	  end do
 	end do	  
@@ -532,8 +653,8 @@ real,dimension (igh) :: v
 real,dimension (imaxgridx,imaxgridy) :: tha,thb,phia,phib
 real,dimension (imaxgridx,imaxgridy) ::fll,flh,fl,fhl,fhh,fh,gll,glh,gl,ghl,ghh,gh2
 real,dimension (igh,igh,imaxgridx,imaxgridy) :: f
-integer k,l,i,j,nx,ny,mm
-real(8) vxp,vxm,vyp,vym,dtdx,dtdy 
+integer k,l,i,j,nx,ny, mm
+real(8) vxp,vxm,vyp,vym,dtdx,dtdy
 ! theta
     do i = 2, nx-1
       do j = 2, ny-1
@@ -598,6 +719,7 @@ real(8) vxp,vxm,vyp,vym,dtdx,dtdy
     end do
 return
 end subroutine
+   
 ! 
 subroutine explicit (k,l,nx,ny,fl,fh,gl,gh2,dt,dtdx,dtdy,f0,f,r_time,fn)
 implicit none		 
@@ -632,7 +754,6 @@ real, dimension (igh,igh,imaxgridx,imaxgridy) :: f,fes
 return
 end subroutine
 !
-!
 subroutine b_cond(k,l,i,j,nx,ny,fn,f)
 implicit none		  !	This is a sub-subroutine within tvdfluxes
 integer igh,imaxgridx,imaxgridy
@@ -647,17 +768,20 @@ real,dimension (igh,igh,imaxgridx,imaxgridy) :: f
 return
 end subroutine
 !
-subroutine wrt_results (nx,ny,x,y,r,p,z,t,ux,uy,pxx,pxy,pyy)
+subroutine wrt_results (nx,ny,x,y,r,p,z,t,ux,uy,pxx,pxy,pyy,qx,qy,wxx,wxy,wyy)
 implicit none
 integer igh,imaxgridx,imaxgridy
 parameter (igh=20,imaxgridx=400,imaxgridy=400)
 integer i,j,nx,ny
 real,dimension (imaxgridx) :: x,y
-real,dimension (imaxgridx,imaxgridy) :: r,p,z,t,ux,uy,pxx,pxy,pyy
+real,dimension (imaxgridx,imaxgridy) :: r,p,z,t,ux,uy,pxx,pxy,pyy,qx,qy,wxx,wxy,wyy
 do i = 2, nx-1
 do j = 2, ny-1
-   write (60,*) x(i), y(j), r(i,j), p(i,j), z(i,j),t(i,j),ux(i,j),uy(i,j),pxx(i,j),pxy(i,j),pyy(i,j)
+   write (60,*) x(i),y(j),r(i,j),p(i,j),z(i,j),t(i,j),ux(i,j),uy(i,j), & 
+	pxx(i,j),pxy(i,j),pyy(i,j),qx(i,j),qy(i,j),wxx(i,j),wxy(i,j),wyy(i,j)
 end do 
 end do
 return
 end subroutine
+
+
