@@ -11,7 +11,7 @@ use mathmodule!, only: ones, zeros, inverse, transposev
 implicit none
 
 integer, parameter :: n=3, m=3
-real, dimension(n,m) :: A,B,C 	!Matrix Arrays
+real, dimension(n,m) :: A,B,C,D !Matrix Arrays
 real, dimension(1,m) :: x,z,ty 	!Row vectors
 real, dimension(n,1) :: y,w,tz 	!Column vectors
 real, dimension(:,:), allocatable :: xx,zz !unknown dimension
@@ -77,6 +77,10 @@ call disp('zeros(4,1)= ',zeros(4,1))
 
 ! Invert array
 call disp('inv(B^2) = ',inverse(matmul(B,B)))
+
+! Diagonalize vector
+call diag(x,0,D)
+call disp('D = ',D)
 
 ! Print array using dispmodule.f90
 !call disp('C = ',C)

@@ -2,7 +2,7 @@ module mathmodule
 
 implicit none
 private
-public :: ones, zeros, transposev, inverse
+public :: ones, zeros, transposev, inverse, diag
 !
 ! Global declarations would appear here it any
 !
@@ -24,6 +24,30 @@ real, dimension(n,m) :: zeros
 ! Using fortran 95:
 zeros = 0.0
 end function zeros
+
+subroutine diag(a,h,Mat)
+implicit none
+integer :: n,i,j,h
+real, dimension(:), intent(in) :: a
+real, dimension(:,:), intent(out) :: Mat
+n = size(a) + abs(h)
+
+do i = 1,n
+ do j = 1,n
+  Mat(j,i) = 0
+ end do
+end do
+
+if (h >= 0) then 
+ do i = 1,n 
+  Mat(i,i+h) = a(i)
+ end do
+else
+ do i = 1,n
+  Mat(i+h,i) = a(i)
+ end do
+end if
+end subroutine diag
 
 subroutine transposev(a,ta)
 ! transpose and vector array
