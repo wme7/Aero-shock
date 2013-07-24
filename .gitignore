@@ -2,6 +2,10 @@
 ## Eclipse
 #################
 
+*. Fortran Build files
+*.o
+*.mod
+
 *.pydevproject
 .project
 .metadata
