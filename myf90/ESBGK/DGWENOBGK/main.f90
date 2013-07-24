@@ -3,17 +3,27 @@
 ! The main modification is to add an outside loop with do is=1, nv (isigma from 1 to nv) enddo
 
 program main
+
   use data_module
+
   integer kcount, lll, kk0, i
+
   real burgex_val
+
   character*32 yc,yc1
 
+
+
   call setup
+
+
 
   open(109,file='wenopoint'//'_p'//char(48+mp)//'_flux'//char(kflux+48)//'_M'//char(mm+48)//'.plt')
 
   indexmin=1000
+
   indexmax=0
+
   kcount=0
 
   call initdata
@@ -21,9 +31,17 @@ program main
   call init
 
   ! call coeff
+
   ! pause
+
   ! call smooth_coef
+
   ! begin time iteration
+
+
+
+
+
   ! determine dt
 
   call setdt
@@ -37,6 +55,7 @@ program main
   if(kcount/1*1.eq.kcount) then
 
      ! write(6,*) kcount,' t= ',t
+
      ! pause
 
   end if
@@ -85,19 +104,19 @@ call limit(is)
 
 2000 continue
 
-  yc='bur'//'_'//char(48+mo)//'_'//char(kflux+48)//'_'//char(mm+48)//'.plt'
+!  yc='bur'//'_'//char(48+mo)//'_'//char(kflux+48)//'_'//char(mm+48)//'.plt'
 
-  open(1,file=yc)
+!  open(1,file=yc)
 
-  do kk0=0,n
+!  do kk0=0,n
 
-     burgex_val = burgex(tprint, x(kk0))
+!     burgex_val = burgex(tprint, x(kk0))
 
-     write(1,123) x(kk0),u(0,kk0,is),burgex_val
+!     write(1,123) x(kk0),u(0,kk0,is),burgex_val
 
-  enddo
+!  enddo
 
-  close(1)
+!  close(1)
 
   write(*,*) n, indexmin,indexmax
 
@@ -128,7 +147,9 @@ end program main
 
 
 !!-------------------------------------------
+
 !!
+
 !!-------------------------------------------
 
 subroutine setup
@@ -256,21 +277,30 @@ subroutine init
   ! u0(x)=.5+sin(pi*x)
 
   gh(1:5) =(/-5.38748089001,-4.60368244955,-3.94476404012,-3.34785456738,-2.78880605843/)
+
   gh(6:10) =(/-2.25497400209,-1.73853771212,-1.2340762154,-0.737473728545,-  0.245340708301/)
+
   gh(11:15) =(/0.245340708301,0.737473728545,1.2340762154,1.73853771212,2.25497400209/)
+
   gh(16:20) =(/2.78880605843,3.34785456738,3.94476404012,4.60368244955,5.38748089001/)
+
   w(1:5)  =(/0.898591961453,0.704332961176,0.62227869619,0.575262442852,0.544851742366/)
+
   w(6:10) = (/0.524080350949,0.509679027117,0.499920871336,0.493843385272,0.490921500667/)
+
   w(11:15) =(/0.490921500667,0.493843385272,0.499920871336,0.509679027117,0.524080350949/)
+
   w(16:20) =(/0.544851742366,0.575262442852,0.62227869619,0.704332961176,0.898591961453/)
+
+
 
 if (ighq .eq. 1) go to 10
 
-   do is=1,nv
+   do iv=1,nv
 
-cc(is) =w(is)
+cc(iv) =w(iv)
 
-vv(is) = gh(is)
+vv(iv) = gh(iv)
 
    end do
 
@@ -290,13 +320,13 @@ vv(is) = gh(is)
 
     end do
 
-    do is = 2, (nv-1)
+    do iv = 2, (nv-1)
 
-    cc(is) = 64./45. * dv
+    cc(iv) = 64./45. * dv
 
-    if  (mod(is,4) .eq.1) cc(is) = 28./45. * dv
+    if  (mod(iv,4) .eq.1) cc(iv) = 28./45. * dv
 
-    if (mod(is,4) .eq.3) cc(is) = 24./45. * dv
+    if (mod(iv,4) .eq.3) cc(iv) = 24./45. * dv
 
     end do
 
@@ -366,7 +396,7 @@ rr=1.0
 
 ur=0
 
-pr=1
+pr=1.0
 
 
 
@@ -376,13 +406,13 @@ pr=1
 
       do kk=0,mp
 
-      rho(kk,i) = rl
+      rki(kk,i) = rl
 
-      uxm(kk,i) = ul
+      uki(kk,i) = ul
 
-      pre(kk,i) = pl
+      pki(kk,i) = pl
 
-     tem(kk,i) = 2.0d0*pl/rl
+     tki(kk,i) = 2.0d0*pl/rl
 
 end do
 
@@ -404,11 +434,11 @@ do kk=0,mp
 
       do kk=0,mp
 
-         do is = 1, nv
+         do iv = 1, nv
 
-         pres       = (vv(is)-uki(kk,i))**2/tki(kk,i)
+         pres       = (vv(iv)-uki(kk,i))**2/tki(kk,i)
 
-         u(kk,i,is)   = rki(kk,i)*exp(-pres)/sqrt(pi*tki(kk,i))
+         u(kk,i,iv)   = rki(kk,i)*exp(-pres)/sqrt(pi*tki(kk,i))
 
         end do
 
@@ -418,18 +448,17 @@ do kk=0,mp
 
 
 
-  do is=1,nv
+  do iv=1,nv
 
   do i=0,n+1
 
      do kk=0,mp
 
-a(kk)=(u(kk,i,is)*fle(kk,gau(1,1)) + u(kk,i,is)*fle(kk,gau(2,1)))*gau(1,2)&
+a(kk)=(u(kk,i,iv)*fle(kk,gau(1,1)) + u(kk,i,iv)*fle(kk,gau(2,1)))*gau(1,2)&
 
-             +(u(kk,i,is)*fle(kk,gau(3,1)) + u(kk,i,is)*fle(kk,gau(4,1)))*gau(3,2)&
+             +(u(kk,i,iv)*fle(kk,gau(3,1)) + u(kk,i,iv)*fle(kk,gau(4,1)))*gau(3,2)&
 
-             +(u(kk,i,is)*fle(kk,gau(5,1)) + u(kk,i,is)*fle(kk,gau(6,1)))*gau(6,2)
-
+             +(u(kk,i,iv)*fle(kk,gau(5,1)) + u(kk,i,iv)*fle(kk,gau(6,1)))*gau(6,2)
 
 
 ! a(kk)=(u0(x(i)+gau(1,1)*dx(i),is)*fle(kk,gau(1,1))&
@@ -440,7 +469,7 @@ a(kk)=(u(kk,i,is)*fle(kk,gau(1,1)) + u(kk,i,is)*fle(kk,gau(2,1)))*gau(1,2)&
 
 !             +u0(x(i)+gau(4,1)*dx(i),is)*fle(kk,gau(4,1)))*gau(3,2)&
 
-!             +(u0(x(i)+gau(5,1)*dx(i),is)*fle(kk,gau(5,1))&
+!            +(u0(x(i)+gau(5,1)*dx(i),is)*fle(kk,gau(5,1))&
 
 !             +u0(x(i)+gau(6,1)*dx(i),is)*fle(kk,gau(6,1)))*gau(6,2)
 
@@ -452,11 +481,11 @@ a(kk)=(u(kk,i,is)*fle(kk,gau(1,1)) + u(kk,i,is)*fle(kk,gau(2,1)))*gau(1,2)&
 
         if(kk.eq.0) then
 
-           u(kk,i,is)=ai(kk,kk)*a(kk)
+           u(kk,i,iv)=ai(kk,kk)*a(kk)
 
         else
 
-           u(kk,i,is)=ai(kk,kk)*a(kk)
+           u(kk,i,iv)=ai(kk,kk)*a(kk)
 
         endif
 
@@ -486,7 +515,7 @@ end subroutine init
 
 !function u0(x00)
 
-! pi=4.0*atan(1.0)
+!  pi=4.0*atan(1.0)
 
 !  u0=sin(pi*x00)+0.5
 
@@ -537,19 +566,31 @@ subroutine res(is)
   end if
 
 
+
   ! amax=1.0
+
   ! compute the contribution from the cell boundary
+
   do  i=0,n+1
+
      un(i)=eval(u(0,i,is),mp,0.5)
+
      up(i-1)=eval(u(0,i,is),mp,-0.5)
+
   enddo
 
 
+
   do i=0,n
+
      if(kflux.eq.1) then
+
         ! Roe flux
+
 !        if(un(i)+up(i).gt.0.) then
+
 !           flx(i)=vv(is)*un(i)
+
 !           flx(i)=flux(un(i))
 
 flx(i)=0.5*(vv(is)*up(i) + vv(is)*un(i) - amax*(up(i)-un(i)))
@@ -580,7 +621,7 @@ flx(i)=0.5*(vv(is)*up(i) + vv(is)*un(i) - amax*(up(i)-un(i)))
 
      else
 
-        ! local LF flux
+       ! local LF flux
 
         amax=max(abs(un(i)),abs(up(i)))
 
@@ -738,13 +779,13 @@ subroutine macrop
 
     ske = 0
 
-    do is = 1, nv
+    do iv = 1, nv
 
-    skr = skr + cc(is) * u(kk,i,is)
+    skr = skr + cc(iv) * u(kk,i,iv)
 
-    sku = sku + cc(is) * u(kk,i,is) * vv(is)
+    sku = sku + cc(iv) * u(kk,i,iv) * vv(iv)
 
-    ske = ske + cc(is) * u(kk,i,is) * (0.5 * vv(is) * vv(is))
+    ske = ske + cc(iv) * u(kk,i,iv) * (0.5 * vv(iv) * vv(iv))
 
     enddo
 
@@ -753,26 +794,24 @@ subroutine macrop
      uki(kk,i)    = sku/skr
 
      eki(kk,i)   = ske
-
      tki(kk,i) =  4.0d0*eki(kk,i)/rki(kk,i) - 2.0d0*uki(kk,i)*uki(kk,i)
-
      pki(kk,i) = 0.5d0*rki(kk,i)*tki(kk,i)
-
 
 
     enddo
 
    enddo
 
-do is = 1, nv
+do iv = 1, nv
 
 do i = 1, nxp1
 
   do kk=0,mp
 
-pres = (vv(is)-uki(kk,i))**2/tki(kk,i)
+pres  = (vv(iv)-uki(kk,i))**2/tki(kk,i)
 
-   ueq(kk,i,is) = rki(kk,i)*exp(-pres)/sqrt(pi*tki(kk,i))
+   ueq(kk,i,iv) = rki(kk,i)*exp(-pres)/sqrt(pi*tki(kk,i))
+
    enddo
 
 enddo
@@ -897,7 +936,7 @@ end subroutine bc
 
 !  ! the function of flux
 
-!  flux=x*vv(is)
+! flux=x*vv(is)
 
 !  return
 
@@ -1421,7 +1460,7 @@ subroutine initdata
 
      gauss(2,1)=0.5
 
-     gauss(3,1)=-sqrt(21.)/14.0
+    gauss(3,1)=-sqrt(21.)/14.0
 
      gauss(4,1)= sqrt(21.0)/14.0
 
@@ -1854,194 +1893,107 @@ subroutine rk(is)
         do k=0,mp
 
            u(k,i,is)=v(k,i,is)+dt*hg(k,i,is)
-
            temp1(k,i,3)=u(k,i,is)
-
         enddo
-
      enddo
 
 
-
      call bc(is)
-
      call limit(is)
-
      call bc(is)
-
      call res(is)
-
      ! call  wenorecon
-
      do i=1,n
-
         do k=0,mp
-
            u(k,i,is)=(-v(k,i,is)+temp1(k,i,1)+2*temp1(k,i,2)&
-
                 +temp1(k,i,3)+0.5*dt*hg(k,i,is))/3.
-
         enddo
-
      enddo
-
   endif
-
   return
-
 end subroutine rk
 
 
-
 !!-------------------------------------------
-
 !! base function for interpolant of WENO reconstruction
-
 !!-------------------------------------------
-
 function qll(x0,k1,k2,l,i)
-
   use data_module
-
   ! dimension a(-10:10)
-
   x00=x(i)+x0*dx(i)
-
   qll=0.0
-
   do kk=l,k2
-
      t1=1.0
-
      do j=k1-1,k2
-
         if(j.ne.kk) t1=t1*(x(kk+i)+0.5*(dx(kk+i)-dx(j+i))-x(j+i))
-
      enddo
-
      t2=0.0
-
      do j=k1-1,k2
-
         if(j.ne.kk) then
-
            t3=1.0
-
            do j1=k1-1,k2
-
               if(j1.ne.j.and.j1.ne.kk) t3=(x00-x(j1+i)-0.5*dx(j1+i))*t3
-
            enddo
-
            t2=t2+t3
-
         endif
-
      enddo
-
      qll=qll+t2/t1
-
   enddo
-
   qll=qll*dx(i+l)
-
   return
-
 end function qll
 
 
-
 !!-------------------------------------------
-
 !! polynomial function of reconstruction with cells: kk+k1---kk+k2
-
 !!-------------------------------------------
-
 function pll(x0,k1,k2,i,is)
-
   use data_module
-
   ! dimension a(-10:10)
-
   pll=0.0
-
   do l=k1,k2
-
      pll=pll+qll(x0,k1,k2,l,i)*u(0,l+i,is)
-
   enddo
-
   return
-
 end function pll
 
 
-
 !!-------------------------------------------
-
 !! set the coefficent of function pll, and compute the smooth indicators (is indicates isigma)
-
 !!-------------------------------------------
-
 subroutine smooth(i,is,s)
-
   use data_module
-
   dimension s(0:10,nv),aa(0:5,2)
-
   if(mp.eq.1) then
-
      aa(1,1)=(pll(gau(1,1),-1,0,i,is)*gau(1,1)&
-
           +pll(gau(2,1),-1,0,i,is)*gau(2,1))*gau(1,2)&
-
           +(pll(gau(3,1),-1,0,i,is)*gau(3,1)&
-
           +pll(gau(4,1),-1,0,i,is)*gau(4,1))*gau(3,2)&
-
           +(pll(gau(5,1),-1,0,i,is)*gau(5,1)&
-
           +pll(gau(6,1),-1,0,i,is)*gau(6,1))*gau(5,2)
-
      s(1,is)=aa(1,1)**2
-
      aa(1,1)=(pll(gau(1,1),0,1,i,is)*gau(1,1)&
-
           +pll(gau(2,1),0,1,i,is)*gau(2,1))*gau(1,2)&
-
           +(pll(gau(3,1),0,1,i,is)*gau(3,1)&
-
           +pll(gau(4,1),0,1,i,is)*gau(4,1))*gau(3,2)&
-
           +(pll(gau(5,1),0,1,i,is)*gau(5,1)&
-
           +pll(gau(6,1),0,1,i,is)*gau(6,1))*gau(5,2)
-
      s(2,is)=aa(1,1)**2
-
   elseif(mp.eq.2) then
-
      do l=0,2
-
         aa(0,1)=(pll(gau(1,1),l-2,l,i,is)&
-
              +pll(gau(2,1),l-2,l,i,is))*gau(1,2)&
-
              +(pll(gau(3,1),l-2,l,i,is)&
-
              +pll(gau(4,1),l-2,l,i,is))*gau(3,2)&
-
              +(pll(gau(5,1),l-2,l,i,is)&
-
              +pll(gau(6,1),l-2,l,i,is))*gau(5,2)
-
         aa(1,1)=(pll(gau(1,1),l-2,l,i,is)*gau(1,1)&
              +pll(gau(2,1),l-2,l,i,is)*gau(2,1))*gau(1,2)&
              +(pll(gau(3,1),l-2,l,i,is)*gau(3,1)&
              +pll(gau(4,1),l-2,l,i,is)*gau(4,1))*gau(3,2)&
              +(pll(gau(5,1),l-2,l,i,is)*gau(5,1)&
              +pll(gau(6,1),l-2,l,i,is)*gau(6,1))*gau(5,2)
-       aa(2,1)=(pll(gau(1,1),l-2,l,i,is)*gau(1,1)**2&
+        aa(2,1)=(pll(gau(1,1),l-2,l,i,is)*gau(1,1)**2&
              +pll(gau(2,1),l-2,l,i,is)*gau(2,1)**2)*gau(1,2)&
              +(pll(gau(3,1),l-2,l,i,is)*gau(3,1)**2&
              +pll(gau(4,1),l-2,l,i,is)*gau(4,1)**2)*gau(3,2)&
@@ -2068,7 +2020,7 @@ subroutine smooth(i,is,s)
              +pll(gau(6,1),l-3,l,i,is)*gau(6,1))*gau(5,2)
         aa(2,1)=(pll(gau(1,1),l-3,l,i,is)*gau(1,1)**2&
              +pll(gau(2,1),l-3,l,i,is)*gau(2,1)**2)*gau(1,2)&
-            +(pll(gau(3,1),l-3,l,i,is)*gau(3,1)**2&
+             +(pll(gau(3,1),l-3,l,i,is)*gau(3,1)**2&
              +pll(gau(4,1),l-3,l,i,is)*gau(4,1)**2)*gau(3,2)&
              +(pll(gau(5,1),l-3,l,i,is)*gau(5,1)**2&
              +pll(gau(6,1),l-3,l,i,is)*gau(6,1)**2)*gau(5,2)
@@ -2167,7 +2119,7 @@ subroutine wenorecon(i,is)
         do j=1,ko+1
            sum=rco9(j,l,1)/(weps+s(j,is))**2+sum
         enddo
-       do j=1,ko+1
+        do j=1,ko+1
            ww(j)=rco9(j,l,1)/(weps+s(j,is))**2/sum
         enddo
 

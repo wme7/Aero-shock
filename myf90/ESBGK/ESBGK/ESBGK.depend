@@ -3,11 +3,17 @@
 
 1374389639 source:e:\documents\github\aero-shock\myf90\esbgk\esbgk\mathmodule.f90
 
-1374557131 source:e:\documents\github\aero-shock\myf90\esbgk\esbgk\main.f90
+1374652861 source:e:\documents\github\aero-shock\myf90\esbgk\esbgk\main.f90
 
 1374559379 source:/home/manuel/git/aero-shock/myf90/ESBGK/ESBGK/dispmodule.f90
 
 1374559379 source:/home/manuel/git/aero-shock/myf90/ESBGK/ESBGK/mathmodule.f90
 
 1374559379 source:/home/manuel/git/aero-shock/myf90/ESBGK/ESBGK/tecplotmodule.f90
+
+1374558206 source:e:\documents\github\aero-shock\myf90\esbgk\esbgk\tecplotmodule.f90
+
+1374652310 source:e:\documents\github\aero-shock\myf90\esbgk\esbgk\gausshermitemodule.f90
+
+1374652859 source:e:\documents\github\aero-shock\myf90\esbgk\esbgk\quadraturemodule.f90
 

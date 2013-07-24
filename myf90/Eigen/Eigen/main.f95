@@ -2,8 +2,8 @@
 !coded by Manuel Diaz, NTU, 2013.07.13
 !
 program main
-  USE dispmodule
-  USE eigenmodule
+  use dispmodule
+  use eigenmodule
 
 implicit none
 

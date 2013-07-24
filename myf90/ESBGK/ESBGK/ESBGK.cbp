@@ -40,6 +40,9 @@
 		<Unit filename="mathmodule.f90">
 			<Option weight="0" />
 		</Unit>
+		<Unit filename="quadraturemodule.f90">
+			<Option weight="0" />
+		</Unit>
 		<Unit filename="tecplotmodule.f90">
 			<Option weight="0" />
 		</Unit>

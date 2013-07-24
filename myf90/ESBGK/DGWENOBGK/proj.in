@@ -1,0 +1,11 @@
+$proj_list
+mo=4,	   
+mt=3,      
+kflux=1,   
+cflc=0.1,  
+ierror=0,  
+tprint=1.,
+nv=20, 
+n=100,     
+xmmm=1.    
+/
