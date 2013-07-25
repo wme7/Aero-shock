@@ -1,16 +1,19 @@
 ! Table of Weigths and Abscissas for Gauss Hermite Quadrature
 module quadraturemodule
+use mathmodule
+implicit none
     !
     ! Global variables goes here
     !
 contains
 
-    subroutine gauss_hermite(n,xgh,wgh)
+    subroutine gauss_hermite(N,xgh,wgh)
+    implicit none
     ! we only have discrete cases of values of n
-    integer, intent(in) :: n
-    real, dimension(n),intent(out) :: xgh, wgh
+    integer, intent(in) :: N ! nodes requested
+    real, dimension(N),intent(out) :: xgh, wgh ! abscissas and weights
     ! Select case from table. This table generated using Manuel's Gaussian_Quadratures.nb
-    select case (n)
+    select case (N)
         case (10)
             xgh = (/-3.43615911884,-2.53273167423,-1.7566836493, &
                     -1.03661082979,-0.342901327224,0.342901327224,1.03661082979, &
@@ -252,28 +255,34 @@ contains
     end select
     end subroutine gauss_hermite
 
-    subroutine newton_cotes(n,degree,xnc,wnc)
-    ! we only have discrete degree polynomials.
-    integer, intent(in) :: n, degree
-    real, dimension(n),intent(out) :: xnc, wnc
+    subroutine newton_cotes(a,b,N,nodes,xnc,wnc,k)
+    implicit none
+    ! we only have discrete nodes polynomials.
+    integer, intent(in) :: N,nodes  ! N: nodes requested, nodes: nodes in NC formula,
+    real, intent(in)    :: a,b      ! lower and upper limit of the array
+    real, intent(out)   :: xnc(N),wnc(N),k ! absicass, weigths, k: constant weight
+    real :: h   ! h: delta-x,
 
-    select case (degree)
+    ! build nodes array and define 'h'
+    xnc = linspace(a,b,N);
+    h = real(b-a)/(N-1)
+
+    select case (nodes)
         case (2)
-            xnc = (/0,0/)
-            wnc = (/0,0/)
+            wnc = kron( ones1d(N/1),(/2.0/) ); wnc(1)=1.0; wnc(N)=1.0;
+            k = h/2;
         case (3)
-            xnc = (/0,0/)
-            wnc = (/0,0/)
+            wnc = kron( ones1d(N/2),(/2.0,4.0/) ); wnc(1)=1.0; wnc(N)=1.0;
+            k = h/3;
         case (4)
-            xnc = (/0,0/)
-            wnc = (/0,0/)
+            wnc = kron( ones1d(N/3),(/2.0,3.0,3.0/) ); wnc(1)=1.0; wnc(N)=1.0;
+            k = 3*h/8;
         case (5)
-            xnc = (/0,0/)
-            wnc = (/0,0/)
+            wnc = kron( ones1d(N/4),(/14.0,32.0,12.0,32.0/) ); wnc(1)=7.0; wnc(N)=7.0;
+            k = 2*h/45;
         case default
             print *, 'Case not available'
     end select
-
     end subroutine newton_cotes
 
 end module quadraturemodule

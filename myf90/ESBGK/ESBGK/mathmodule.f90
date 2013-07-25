@@ -1,11 +1,8 @@
 module mathmodule
-
 implicit none
-private
-public :: ones, zeros, transposev, inverse
-!
-! Global declarations would appear here it any
-!
+    !
+    ! Global declarations would appear here it any
+    !
 contains
 ! routines provided by this module:
 
@@ -17,6 +14,14 @@ real, dimension(n,m) :: ones
 ones = 1.0
 end function ones
 
+function ones1d(n)
+implicit none
+integer :: n
+real, dimension(n) :: ones1d
+! Using fortran 95:
+ones1d = 1.0
+end function ones1d
+
 function zeros(n,m)
 implicit none
 integer :: n,m
@@ -24,6 +29,31 @@ real, dimension(n,m) :: zeros
 ! Using fortran 95:
 zeros = 0.0
 end function zeros
+
+function linspace(a,b,n)
+implicit none
+integer :: n,i
+real :: a,b,dx
+real linspace(n)
+! using fortran 95
+dx = (b-a)/(n-1)
+linspace(1) = a
+do i = 1,n
+    linspace(i) = a + (i-1)*dx
+end do
+end function linspace
+
+function kron(a,b)
+implicit none
+real :: a(:),b(:)
+integer :: i,j,Na,Nb
+real :: kron(size(a)*size(b))
+Na = ubound(a,1)
+Nb = ubound(b,1)
+do i=1,Na
+kron((i-1)*Nb+1:i*Nb) = a(i)*b
+end do
+end function kron
 
 subroutine transposev(a,ta)
 ! transpose and vector array
@@ -53,10 +83,10 @@ function inverse(a)
 ! output ...
 ! c(n,n) - inverse matrix of A
 ! comments ...
-! the original matrix a(n,n) will be destroyed 
+! the original matrix a(n,n) will be destroyed
 ! during the calculation
-!=========================================================== 
-implicit none 
+!===========================================================
+implicit none
 ! External variables
 real, dimension(:,:) :: a
 
@@ -93,7 +123,7 @@ do k=1, n-1
    end do
 end do
 
-! Step 2: prepare L and U matrices 
+! Step 2: prepare L and U matrices
 ! L matrix is a matrix of the elimination coefficient
 ! + the diagonal elements are 1.0
 do i=1,n
