@@ -8,7 +8,7 @@
 program main
     ! Load modules
     use mathmodule          ! linear Algebra functions
-    use dispmodule          ! matlab display functions
+    use dispmodule          ! matlab display function for arrays
     use tecplotmodule       ! write to tecplot functions
     use quadraturemodule    ! Gauss Hermite and Newton cotes abscissas and weights
 
