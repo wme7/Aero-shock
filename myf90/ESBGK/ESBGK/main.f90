@@ -17,19 +17,22 @@ program main
 
     ! Define variables
     integer, parameter  :: nx=3, ny=3       ! XY-grid size
-    integer, parameter  :: ngh=10, nnc=200  ! GaussHermite points, Newton-Cotes points
+    integer, parameter  :: ngh=10, nnc=200  ! Gauss-Hermite points, Newton-Cotes points
     real, dimension(ngh):: wi,xi
-    real, dimension(nx,ny) :: f,feq,f_next  ! Matrix Arrays
-    real, dimension(nx) :: x,y   !Vector arrays
+    !real, dimension(nx,ny) :: f,feq,f_next  ! Matrix Arrays
+    !real, dimension(nx) :: x,y   !Vector arrays
     integer :: idnumber,np
-    character(len = 100) :: output_file = 'myresults.plt'
-    character(len = 100) :: output_file2 = 'myresults.plt'
+    !character(len = 100) :: output_file = 'myresults.plt'
+    !character(len = 100) :: output_file2 = 'myresults.plt'
     real T1, T2
 
     ! Print message
     print *, 'This is the beginning of DGWENO_ESBGK program'
 
-    call gausshermite(ngh,xi,wi)
+    call gauss_hermite(ngh,xi,wi)
+    call disp('xi = ',xi); call disp('wi = ',wi);
+
+    call newton_cotes(nnc,5,xi,wi)
     call disp('xi = ',xi); call disp('wi = ',wi);
 
     ! Calculate CPU time
