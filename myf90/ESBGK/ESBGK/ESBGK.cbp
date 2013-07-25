@@ -31,6 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="DGmodule.f90" />
+		<Unit filename="WENOmodule.f90" />
 		<Unit filename="dispmodule.f90">
 			<Option weight="0" />
 		</Unit>
