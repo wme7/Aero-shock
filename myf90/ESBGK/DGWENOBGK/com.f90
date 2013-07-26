@@ -7,7 +7,7 @@ module data_module
   !real*8 pv_begin,pv_end
 
   real*8 nh
-  parameter (nx=2560,md=5,nh=nx/2,nv=60)
+  parameter (nx=2560,md=5,nh=nx/2,nv=80)
 
   real*8 u(0:md,-md:nx+md,1:nv),ueq(0:md,-md:nx+md,1:nv)
   real*8 v(0:md,0:nx+1,1:nv),hg(0:md,0:nx+1,1:nv)
