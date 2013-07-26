@@ -23,11 +23,11 @@ program main
   ! determine dt
   call setdt
 
-  do
+  do 
      if((t.ge.tprint-1.e-10).or.(kcount.ge.kcmax)) exit
 
      if(kcount/1*1.eq.kcount) then
-        ! write(6,*) kcount,' t= ',t
+        ! write(6,*) kcount,' t= ',t  
         ! pause
      end if
 
@@ -41,7 +41,7 @@ program main
 
      call macrop
      print *,kcount,t,dt
-
+     
      t=t+dt
      kcount=kcount+1
      call setdt
@@ -92,15 +92,15 @@ subroutine tec_output
         mx = mx + cc(is) * u(0,i,is) * vv(is)
         me  = me + cc(is) * u(0,i,is) * (0.5 * vv(is) * vv(is))
      enddo
-
-     uuu = mx/rho
+     
+     uuu = mx/rho  
      tt = 4.0d0*me/rho - 2.0d0*uuu**2
      pp = 0.5d0*rho*tt
 
      write(1,123) x(i),rho,pp,tt,uuu
   enddo
   close(1)
-
+  
 123 format(4(1x,f16.6))
 end subroutine tec_output
 
@@ -144,33 +144,17 @@ end subroutine setup
 subroutine init
   use data_module
 
-  dimension a(0:10), temp(0:n)
+  dimension a(0:10), temp(0:n) 
   ! set up the initial condition
   ! u0(x)=.5+sin(pi*x)
-gh = (/-8.09876113925,-7.41158253149,-6.84023730525, &
-        -6.32825535122,-5.85409505603,-5.40665424797,-4.97926097855, &
-        -4.56750207284,-4.16825706683,-3.77920675344,-3.39855826586, &
-        -3.0248798839,-2.65699599844,-2.29391714188,-1.93479147228, &
-        -1.57886989493,-1.22548010905,-0.874006612357,-0.523874713832, &
-        -0.174537214598,0.174537214598,0.523874713832,0.874006612357, &
-        1.22548010905,1.57886989493,1.93479147228,2.29391714188, &
-        2.65699599844,3.0248798839,3.39855826586,3.77920675344, &
-        4.16825706683,4.56750207284,4.97926097855,5.40665424797, &
-        5.85409505603,6.32825535122,6.84023730525,7.41158253149, &
-        8.09876113925 /)
-w = (/2.59104371385e-29,8.54405696378e-25, &
-        2.56759336541e-21,1.98918101212e-18,6.00835878949e-16, &
-        8.80570764522e-14,7.15652805269e-12,3.52562079137e-10, &
-        1.12123608323e-8,2.41114416367e-7,3.63157615069e-6, &
-        0.0000393693398109,0.000313853594541,0.0018714968296, &
-        0.00846088800826,0.0293125655362,0.0784746058654,0.163378732713, &
-        0.265728251877,0.338643277426,0.338643277426,0.265728251877, &
-        0.163378732713,0.0784746058654,0.0293125655362,0.00846088800826, &
-        0.0018714968296,0.000313853594541,0.0000393693398109, &
-        3.63157615069e-6,2.41114416367e-7,1.12123608323e-8, &
-        3.52562079137e-10,7.15652805269e-12,8.80570764522e-14, &
-        6.00835878949e-16,1.98918101212e-18,2.56759336541e-21, &
-        8.54405696378e-25,2.59104371385e-29 /)
+  gh(1:5) =(/-5.38748089001,-4.60368244955,-3.94476404012,-3.34785456738,-2.78880605843/)
+  gh(6:10) =(/-2.25497400209,-1.73853771212,-1.2340762154,-0.737473728545,-  0.245340708301/)
+  gh(11:15) =(/0.245340708301,0.737473728545,1.2340762154,1.73853771212,2.25497400209/)
+  gh(16:20) =(/2.78880605843,3.34785456738,3.94476404012,4.60368244955,5.38748089001/)
+  w(1:5)  =(/0.898591961453,0.704332961176,0.62227869619,0.575262442852,0.544851742366/)
+  w(6:10) = (/0.524080350949,0.509679027117,0.499920871336,0.493843385272,0.490921500667/)
+  w(11:15) =(/0.490921500667,0.493843385272,0.499920871336,0.509679027117,0.524080350949/)
+  w(16:20) =(/0.544851742366,0.575262442852,0.62227869619,0.704332961176,0.898591961453/)
 
   if (ighq .eq. 1) go to 10
   do is=1,nv
@@ -195,7 +179,7 @@ w = (/2.59104371385e-29,8.54405696378e-25, &
 30 continue
   pi=4.0*atan(1.0)
   xleft=  .0
-  xright= 1.0
+  xright= 1.0    
   xlen=xright-xleft
 
   dxuni=xlen/n
@@ -236,15 +220,15 @@ w = (/2.59104371385e-29,8.54405696378e-25, &
      else
         do kk=0,mp
            rki(kk,i) = rr
-           uki(kk,i) = ur
+           uki(kk,i) = ur  
            pki(kk,i) = pr
            tki(kk,i) = 2.0d0*pr/rr
         end do
      end if
-     do kk=0,mp
+     do kk=0,mp       
         do is = 1, nv
            pres       = (vv(is)-uki(kk,i))**2/tki(kk,i)
-           u(kk,i,is)   = rki(kk,i)*exp(-pres)/sqrt(pi*tki(kk,i))
+           u(kk,i,is)   = rki(kk,i)*exp(-pres)/sqrt(pi*tki(kk,i)) 
         end do
      end do
   end do
@@ -420,10 +404,10 @@ subroutine macrop
            ske = ske + cc(is) * u(kk,i,is) * (0.5 * vv(is) * vv(is))
         enddo
         rki(kk,i) = skr
-        uki(kk,i) = sku/skr
-        eki(kk,i) = ske
+        uki(kk,i) = sku/skr  
+        eki(kk,i) = ske  
         tki(kk,i) = 4.0d0*eki(kk,i)/rki(kk,i) - 2.0d0*uki(kk,i)*uki(kk,i)
-        pki(kk,i) = 0.5d0*rki(kk,i)*tki(kk,i)
+        pki(kk,i) = 0.5d0*rki(kk,i)*tki(kk,i) 
 
      enddo
   enddo
@@ -431,7 +415,7 @@ subroutine macrop
      do i = 1, n
         do kk=0,mp
            pres  = (vv(is)-uki(kk,i))**2/tki(kk,i)
-           ueq(kk,i,is) = rki(kk,i)*exp(-pres)/sqrt(pi*tki(kk,i))
+           ueq(kk,i,is) = rki(kk,i)*exp(-pres)/sqrt(pi*tki(kk,i)) 
         enddo
      enddo
   enddo
@@ -474,7 +458,7 @@ end subroutine setdt
 !!-------------------------------------------
 !!
 !!-------------------------------------------
-subroutine bc(is)
+subroutine bc(is) 
   use data_module
 
   ! set up the boundary condition keep constant state extrapolation
@@ -521,7 +505,7 @@ function burgex(te,xe)
      i0=i
   enddo
 7 us=uu(i0)
-  un=us
+  un=us 
   do i=1,400
      us=un
      x0=ay-us*te
@@ -603,7 +587,7 @@ subroutine initdata
   ! use dflib
   use data_module
 
-  dimension a(0:md),b(0:md),c(0:md),aic(0:20,0:20,0:10),temp(0:n)
+  dimension a(0:md),b(0:md),c(0:md),aic(0:20,0:20,0:10),temp(0:n) 
 
   ! set up the necessary data before setting the initial condition
   do k=0,mp
@@ -855,7 +839,7 @@ subroutine limit(is)
            end if
         enddo
         cycle
-        !     100  if(abs(amc-am(1)).gt.1e-6)  then
+        !     100  if(abs(amc-am(1)).gt.1e-6)  then 
 330     index=index+1
         call wenorecon(i,is)
         indexmin=min(indexmin,index)
@@ -993,7 +977,7 @@ subroutine rk(is)
 end subroutine rk
 
 !!-------------------------------------------
-!! base function for interpolant of WENO reconstruction
+!! base function for interpolant of WENO reconstruction  
 !!-------------------------------------------
 function qll(x0,k1,k2,l,i)
   use data_module
@@ -1003,14 +987,14 @@ function qll(x0,k1,k2,l,i)
   do kk=l,k2
      t1=1.0
      do j=k1-1,k2
-        if(j.ne.kk) t1=t1*(x(kk+i)+0.5*(dx(kk+i)-dx(j+i))-x(j+i))
+        if(j.ne.kk) t1=t1*(x(kk+i)+0.5*(dx(kk+i)-dx(j+i))-x(j+i)) 
      enddo
      t2=0.0
      do j=k1-1,k2
         if(j.ne.kk) then
            t3=1.0
            do j1=k1-1,k2
-              if(j1.ne.j.and.j1.ne.kk) t3=(x00-x(j1+i)-0.5*dx(j1+i))*t3
+              if(j1.ne.j.and.j1.ne.kk) t3=(x00-x(j1+i)-0.5*dx(j1+i))*t3 
            enddo
            t2=t2+t3
         endif
@@ -1022,7 +1006,7 @@ function qll(x0,k1,k2,l,i)
 end function qll
 
 !!-------------------------------------------
-!! polynomial function of reconstruction with cells: kk+k1---kk+k2
+!! polynomial function of reconstruction with cells: kk+k1---kk+k2 
 !!-------------------------------------------
 function pll(x0,k1,k2,i,is)
   use data_module
@@ -1161,7 +1145,7 @@ end subroutine smooth
 !!-------------------------------------------
 !! reconstruction polynomial on trouble cell by WENO
 !!-------------------------------------------
-subroutine wenorecon(i,is)
+subroutine wenorecon(i,is) 
   use data_module
   dimension s(0:10,nv),ww(6),pp1(6),a(-10:10),temp(6)
   weps=1.0e-6
@@ -1230,7 +1214,7 @@ subroutine wenorecon(i,is)
            enddo
            rco9(kk+1,l,1)=(qll(x1,-ko,ko,kk,i)-ttc)/coef9(ko+1,kk+1,l)
         enddo
-        !     write(*,*) x1
+        !     write(*,*) x1 
         !     write(*,*) coef9,rco9
         !     pause
      enddo
@@ -1279,7 +1263,7 @@ subroutine wenorecon(i,is)
            enddo
            rco9(kk+1,l,1)=(qll(x1,-ko,ko,kk,i)-ttc)/coef9(ko+1,kk+1,l)
         enddo
-        !     write(*,*) x1
+        !     write(*,*) x1 
         !     write(*,*) coef9,rco9
         !     pause
      enddo
@@ -1308,7 +1292,7 @@ subroutine wenorecon(i,is)
 
      temp(5)=(180.0*u(0,i,is)-9.0*(temp(1)+temp(2))&
           -(temp(3)+temp(4))*49.0)/64.0
-     !     reconstruction of u(1,i,is), u(2,i,is),u(3,i,is)
+     !     reconstruction of u(1,i,is), u(2,i,is),u(3,i,is)  
      u(1,i,is)=((fle(1,gauss(1,1))*temp(1)&
           +fle(1,gauss(2,1))*temp(2))*gauss(1,2)&
           +(fle(1,gauss(3,1))*temp(3)&
@@ -1345,7 +1329,7 @@ subroutine wenorecon(i,is)
            enddo
            rco9(kk+1,l,1)=(qll(x1,-ko,ko,kk,i)-ttc)/coef9(ko+1,kk+1,l)
         enddo
-        !     write(*,*) x1
+        !     write(*,*) x1 
         !     write(*,*) coef9,rco9
         !     pause
      enddo
@@ -1417,7 +1401,7 @@ subroutine wenorecon(i,is)
            temp(l)=temp(l)+ww(ll)*pp1(ll)*sigma(2,l)
         enddo
      enddo
-     !     reconstruction of u(1,i,is), u(2,i,is),u(3,i,is),u(4,i,is)
+     !     reconstruction of u(1,i,is), u(2,i,is),u(3,i,is),u(4,i,is)  
      u(1,i,is)=((fle(1,gauss(1,1))*temp(1)&
           +fle(1,gauss(2,1))*temp(2))*gauss(1,2)&
           +(fle(1,gauss(3,1))*temp(3)&

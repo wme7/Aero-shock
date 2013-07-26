@@ -34,9 +34,8 @@
 		<Unit filename="com.f90">
 			<Option weight="0" />
 		</Unit>
-		<Unit filename="main.f90">
-			<Option weight="1" />
-		</Unit>
+		<Unit filename="dg_weno_bgk_1d.f90" />
+		<Unit filename="proj.in" />
 		<Extensions>
 			<code_completion />
 			<envvars />
