@@ -2,13 +2,13 @@
 module data_module
   implicit none
   integer nx,md,nv
-  
+
   !real*8, allocatable :: ph_q_v(:), ph_q_w(:)
   !real*8 pv_begin,pv_end
 
   real*8 nh
-  parameter (nx=2560,md=5,nh=nx/2,nv=20)
-  
+  parameter (nx=2560,md=5,nh=nx/2,nv=60)
+
   real*8 u(0:md,-md:nx+md,1:nv),ueq(0:md,-md:nx+md,1:nv)
   real*8 v(0:md,0:nx+1,1:nv),hg(0:md,0:nx+1,1:nv)
   real*8 rki(0:md,-md:nx+md),uki(0:md,-md:nx+md),pki(0:md,-md:nx+md),tki(0:md,-md:nx+md)
@@ -37,8 +37,8 @@ module data_module
   integer n      !n cells
   real*8 xmmm      !TVB constant M
   real*8 tau
-  integer phase_quadrature_rule 
+  integer phase_quadrature_rule
   integer init_value    !init values 0: 0.5+sin(pi*x)  1:sod problem
-  
+
   namelist/proj_list/mo,mt,kflux,cflc,tau,phase_quadrature_rule,init_value,ierror,tprint,n,xmmm
 end module data_module
