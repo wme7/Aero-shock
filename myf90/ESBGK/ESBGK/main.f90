@@ -66,7 +66,9 @@ program main
     end select
 
     ! Chek point (uncomment to diplay variables)
-    !call disp('nv = ',nv); call disp('w = ',w); call disp('k = ',k)
+    call disp('nv = ',nv); print *, ' ';
+    call disp('w = ',w); print *, ' ';
+    call disp('k = ',k); print *, ' ';
 
     ! Calculate CPU time
     call cpu_time(T1); print *, 'time for calcualations', T1, 'seconds.';

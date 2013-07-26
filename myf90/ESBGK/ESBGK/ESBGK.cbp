@@ -36,6 +36,7 @@
 		<Unit filename="dispmodule.f90">
 			<Option weight="0" />
 		</Unit>
+		<Unit filename="initmodule.f90" />
 		<Unit filename="main.f90">
 			<Option weight="1" />
 		</Unit>
