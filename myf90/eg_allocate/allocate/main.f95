@@ -9,7 +9,8 @@ program main
     implicit none
 
     ! define variables and arrays
-    integer, allocatable :: N(:,:), E(:,:)
+    integer, allocatable :: N(:,:),E(:,:)
+    real, allocatable :: F(:,:)
     integer, allocatable :: u(:)
     integer :: i,j,c
     integer :: g(18)
@@ -22,6 +23,7 @@ program main
     allocate(N(c,2*c)) ! first matrix
     allocate(E(c,2*c)) ! second matrix
     allocate(u(size(g)))   ! for initial condition
+    allocate(F(c,2*c))
 
     ! make sure the matrixes are clean, we don't want surprices from the compiler!
     N = 0
@@ -61,4 +63,11 @@ program main
     print *, ' '
     call disp("E = ",E)
 
+    !forall (j=1:c,i=1:c)
+    !    f(j,i) = exp(real(N(j,i)*E(j,i)))
+    !end forall
+    N = 1
+    E = 3
+    F = real(N)/E
+    call disp("F = ",F)
 end

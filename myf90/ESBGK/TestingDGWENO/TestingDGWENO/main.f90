@@ -125,20 +125,17 @@ program main
         allocate(r(nx,nv)); r = rr; r(1:ceiling(real(nx)/2),:) = rl
         allocate(u(nx,nv)); u = ur; u(1:ceiling(real(nx)/2),:) = ul
         allocate(p(nx,nv)); p = pr; p(1:ceiling(real(nx)/2),:) = pl
+        allocate(t(nx,nv)); t = 2.0*p/r;
 
         ! Chek point (uncomment to diplay variables)
         !call disp(' (rho,u,p) at the left  = ',reshape((/rl,ul,pl/),(/1,3/))  )
         !call disp(' (rho,u,p) at the right = ',reshape((/rr,ur,pr/),(/1,3/))  )
-        call disp('u = ',u,DIGMAX=4,LBOUND=LBOUND(u))
-        call disp('vv = ',vv,DIGMAX=3,LBOUND=LBOUND(vv))
+        !call disp('u = ',u,DIGMAX=4,LBOUND=LBOUND(u))
+        !call disp('vv = ',vv,DIGMAX=3,LBOUND=LBOUND(vv))
         print *, ' ';
 
         ! Use Macroscopic Variables to proyect into probability distribution space by equilibrium PDF
-        allocate(feq(nx,nv));
-        forall (j=1:nx, i=1:nv)
-            feq(j,i) = -((vv(j,i)-u(j,i))**2/t(j,i)) !(r(j,i)/sqrt(PI*t(j,i)))*exp(-((vv(j,i)-u(j,i))**2/t(j,i)))
-        end forall
-        call disp('feq = ',feq,DIGMAX=3,LBOUND=LBOUND(feq))
+        allocate(feq(nx,nv)); feq = (r/sqrt(PI*t))*exp(-(vv-u)**2/t); call disp('feq = ',feq,DIGMAX=3,LBOUND=LBOUND(feq))
 
         ! Use the equilibrium of IC variables as the IC for 'f',
         allocate(f(P_deg,nx,nv)); !f = feq;
