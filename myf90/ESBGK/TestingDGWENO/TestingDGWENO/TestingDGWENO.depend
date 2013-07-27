@@ -1,5 +1,17 @@
 # depslib dependency file v1.0
-1374927848 source:/home/manuel/git/aero-shock/myf90/ESBGK/TestingDGWENO/TestingDGWENO/main.f95
+1374939967 source:/home/manuel/git/aero-shock/myf90/ESBGK/TestingDGWENO/TestingDGWENO/main.f95
 
 1374928209 source:/home/manuel/git/aero-shock/myf90/ESBGK/TestingDGWENO/TestingDGWENO/IDmodule.f90
+
+1374818856 source:/home/manuel/git/aero-shock/myf90/ESBGK/TestingDGWENO/TestingDGWENO/DGmodule.f90
+
+1374818856 source:/home/manuel/git/aero-shock/myf90/ESBGK/TestingDGWENO/TestingDGWENO/dispmodule.f90
+
+1374932058 source:/home/manuel/git/aero-shock/myf90/ESBGK/TestingDGWENO/TestingDGWENO/initmodule.f90
+
+1374932113 source:/home/manuel/git/aero-shock/myf90/ESBGK/TestingDGWENO/TestingDGWENO/mathmodule.f90
+
+1374818856 source:/home/manuel/git/aero-shock/myf90/ESBGK/TestingDGWENO/TestingDGWENO/tecplotmodule.f90
+
+1374818856 source:/home/manuel/git/aero-shock/myf90/ESBGK/TestingDGWENO/TestingDGWENO/quadraturemodule.f90
 

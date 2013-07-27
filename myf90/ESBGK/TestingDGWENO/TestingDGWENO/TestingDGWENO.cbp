@@ -31,9 +31,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="DGmodule.f90" />
 		<Unit filename="IDmodule.f90" />
 		<Unit filename="configuration.in" />
-		<Unit filename="main.f95" />
+		<Unit filename="dispmodule.f90" />
+		<Unit filename="initmodule.f90" />
+		<Unit filename="main.f90" />
+		<Unit filename="mathmodule.f90" />
+		<Unit filename="quadraturemodule.f90" />
+		<Unit filename="tecplotmodule.f90" />
 		<Extensions>
 			<code_completion />
 			<debugger />

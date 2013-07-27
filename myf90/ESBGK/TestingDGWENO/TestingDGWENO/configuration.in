@@ -1,7 +1,8 @@
 $Parameters_list
     name="SBBGK1d",
     theta=0,
-    nx=100,
+    nx=10,
+    quad=1,
     P_deg=3,
     RK_stages=3,
     IC_case=1,
