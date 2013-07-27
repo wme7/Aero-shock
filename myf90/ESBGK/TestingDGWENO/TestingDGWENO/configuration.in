@@ -1,0 +1,18 @@
+$Parameters_list
+    name="SBBGK1d",
+    theta=0,
+    nx=100,
+    P_deg=3,
+    RK_stages=3,
+    IC_case=1,
+    fmodel=1,
+    f_case=1,
+    method=1,
+    tau=0.0001,
+    kflux=1,
+    tEnd=0.1,
+    MM=1.0
+/
+!End of list
+!Coded by Manuel Diaz
+NTU, 2013.06.16

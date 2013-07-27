@@ -1,0 +1,13 @@
+$proj_list
+    mo=4,
+    mt=3,
+    kflux=1,
+    cflc=0.1,
+    tau=1e-4,
+    phase_quadrature_rule=0,
+    init_value=1,
+    ierror=0,
+    tprint=0.1,
+    n=100,
+    xmmm=1.0
+/ !End of list
