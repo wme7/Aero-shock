@@ -1,14 +1,15 @@
-! For Testing the DG&WENO Subroutines
+! DG&WENO for Classical Botlzmann Equation
 ! By Manuel Diaz, NTU, 2013.06.16
-
+! manuel.ade'at'gmail.com
+!
 program main
         ! Load modules
-        use IDmodule            ! create ID names for output files
-        use mathmodule          ! linear Algebra functions
-        use dispmodule          ! matlab display function for arrays
-        use tecplotmodule       ! write to tecplot functions
+        use IDmodule            ! Create ID names for output files
+        use mathmodule          ! Linear Algebra functions
+        use dispmodule          ! Matlab 'disp' function for displaying arrays
+        use tecplotmodule       ! Write to tecplot functions
         use quadraturemodule    ! Gauss Hermite and Newton cotes abscissas and weights
-        use initmodule          ! load 1d initial condition to algorithm
+        use initmodule          ! Load 1d initial condition to algorithm
 
         ! No implicit definitions allowed
         implicit none
@@ -61,13 +62,17 @@ program main
         real :: rl,ul,pl,rr,ur,pr               ! left and right IC values.
         real, allocatable :: r(:,:),u(:,:)      ! classical macroscopic quantities
         real, allocatable :: p(:,:),t(:,:)      ! r:density, u:x-velocity, p:pressure, t: temperature
-        real, allocatable :: rki(:,:),uki(:,:)  ! Arrays for dealing with DOM
+        real, allocatable :: rki(:,:),uki(:,:)  ! classical macro-properties as degrees of freedom: (P_deg,nx)
         real, allocatable :: pki(:,:),tki(:,:)  ! r:density, u:x-velocity, p:pressure, t: temperature
         real, allocatable :: f(:,:,:),feq(:,:)  ! PDF arrays
 
         ! Name list (comment if parameters where to be setup manualy)
         namelist /parameters_list/ name,theta,nx,quad,P_deg,RK_stages,IC_case,fmodel,f_case,method,kflux,tau,tEnd,MM
         ! this list need not to be in order
+
+        !*********************
+        ! Main program start:
+        !*********************
 
         ! Read file with parameters
         open(10, file="configuration.in", form="FORMATTED", action="READ")
@@ -79,11 +84,11 @@ program main
         ! Create IDs for simulation and result file
         call ID_name(name,theta,nx,P_deg,RK_stages,tau,IC_case,fmodel,f_case,method,IDn,IDf)
 
-        ! Checking IDs
-        print *, 'IDn: ',IDn
-        print *, 'IDf: ',IDf
+        ! Checking IDs (uncomment to diplay variables)
+        !print *, 'IDn: ',IDn
+        !print *, 'IDf: ',IDf
 
-        Print *, 'Build Nv points using Selected Aquadrature method'; print *, ' ';
+        Print *, 'Build Nv points using Selected a quadrature method'; print *, ' ';
         select case (quad)
             case (1)
                 ! allocate w and nv
