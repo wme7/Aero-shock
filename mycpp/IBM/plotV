@@ -1,0 +1,20 @@
+ set xlabel "X"
+ set ylabel "Y"
+ set xrange [5.25:6.75]
+ set yrange [5.75:7.25]
+ set x2tics 0.025
+ set format x2 ""
+ set xtics 0.25
+ set y2tics 0.025
+ set format y2 ""
+ set ytics 0.25 
+ set grid x2 y2 lt 1 lw 0.5
+ xm = 6 
+ ym = 6.3875 
+ a = 0.5 
+ b = 0.5
+ set parametric
+ fx(t)=xm+a*cos(t) 
+ fy(t)=ym+b*sin(t) 
+ plot fx(t) lw 2, fy(t) lw 2, "result/Vflag1" ps 1.5, "result/Vflag2" ps 1.5, "result/Vflag3" ps 1.5
+ pause -1 "hit any key to continue"

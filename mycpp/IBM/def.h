@@ -1,0 +1,12 @@
+#define cx 6
+#define cy 6.3875
+#define rr 0.5
+#define crclnm 960
+#define XD 1029
+#define YD 515
+#define imax 1024
+#define jmax 512
+#define CD 965
+#define pi 3.14159265358979323846
+#define dxValue 0.025
+#define dyValue 0.025
