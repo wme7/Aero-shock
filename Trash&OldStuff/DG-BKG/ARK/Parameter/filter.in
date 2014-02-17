@@ -1,6 +1,0 @@
-!===================================
-0     	    ! filter on=1, filter off=0
-2           ! filter kind; 1: auto, 2: fixed order
-4           ! filter order
-1.0d0       ! cutoff 
-!===================================
