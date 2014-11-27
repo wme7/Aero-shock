@@ -20,36 +20,6 @@ int main ( int argc, char *argv[] )
 //
 //    MAIN is the main program for HELLO_MPI.
 //
-//  Discussion:
-//
-//    This is a simple MPI test program.
-//
-//    Each process prints out a "Hello, world!" message.
-//
-//    The master process also prints out a short message.
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    28 October 2008
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Reference:
-//
-//    William Gropp, Ewing Lusk, Anthony Skjellum,
-//    Using MPI: Portable Parallel Programming with the
-//    Message-Passing Interface,
-//    Second Edition,
-//    MIT Press, 1999,
-//    ISBN: 0262571323,
-//    LC: QA76.642.G76.
-//
 {
   int id;
   int p;
@@ -122,26 +92,6 @@ void timestamp ( )
 //  Purpose:
 //
 //    TIMESTAMP prints the current YMDHMS date as a time stamp.
-//
-//  Example:
-//
-//    31 May 2001 09:45:54 AM
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    08 July 2009
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    None
 //
 {
 # define TIME_SIZE 40

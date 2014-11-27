@@ -25,61 +25,7 @@ int main ( int argc, char *argv[] )
 //
 //  Purpose:
 //
-//    WAVE_MPI solves the wave equation in parallel using MPI.
-//
-//  Discussion:
-//
-//    Discretize the equation for u(x,t):
-//      d^2 u/dt^2 - c^2 * d^2 u/dx^2 = 0  for 0 < x < 1, 0 < t
-//    with boundary conditions:
-//      u(0,t) = u0(t) = sin ( 2 * pi * ( 0 - c * t ) )
-//      u(1,t) = u1(t) = sin ( 2 * pi * ( 1 - c * t ) )
-//    and initial conditions:
-//         u(x,0) = g(x,t=0) =                sin ( 2 * pi * ( x - c * t ) )
-//      dudt(x,0) = h(x,t=0) = - 2 * pi * c * cos ( 2 * pi * ( x - c * t ) ) 
-//
-//    by:
-//
-//      alpha = c * dt / dx.
-//
-//      U(x,t+dt) = 2 U(x,t) - U(x,t-dt) 
-//        + alpha^2 ( U(x-dx,t) - 2 U(x,t) + U(x+dx,t) ).
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    17 November 2013
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Reference:
-//
-//    Geoffrey Fox, Mark Johnson, Gregory Lyzenga, Steve Otto, John Salmon, 
-//    David Walker,
-//    Solving problems on concurrent processors, 
-//    Volume 1: General Techniques and Regular Problems,
-//    Prentice Hall, 1988,
-//    ISBN: 0-13-8230226,
-//    LC: QA76.5.F627.
-//
-//  Local parameters:
-//
-//    Local, double DT, the time step.
-//
-//    Local, int ID, the MPI process ID.
-//
-//    Local, int N_GLOBAL, the total number of points.
-//
-//    Local, int N_LOCAL, the number of points visible to this process.
-//
-//    Local, int NSTEPS, the number of time steps.
-//
-//    Local, int P, the number of MPI processes.
+//    WAVE_MPI solves the wave equation in parallel.
 //
 {
   double dt = 0.00125;
@@ -176,35 +122,6 @@ double *update ( int id, int p, int n_global, int n_local, int nsteps,
 //  Purpose:
 //
 //    UPDATE advances the solution a given number of time steps.
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    17 November 2013
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    Input, int ID, the identifier of this process.
-//
-//    Input, int P, the number of processes.
-//
-//    Input, int N_GLOBAL, the total number of points.
-//
-//    Input, int N_LOCAL, the number of points visible to this process.
-//
-//    Input, int NSTEPS, the number of time steps.
-//
-//    Input, double DT, the size of the time step.
-//
-//    Output, double UPDATE[N_LOCAL], the portion of the solution
-//    at the last time, as evaluated by this process.
 //
 {
   double alpha;
@@ -372,33 +289,6 @@ void collect ( int id, int p, int n_global, int n_local, int nsteps,
 //
 //  Licensing:
 //
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    16 November 2013
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    Input, int ID, the identifier of this process.
-//
-//    Input, int P, the number of processes.
-//
-//    Input, int N_GLOBAL, the total number of points.
-//
-//    Input, int N_LOCAL, the number of points visible to this process.
-//
-//    Input, int NSTEPS, the number of time steps.
-//
-//    Input, double DT, the size of the time step.
-//
-//    Input, double U_LOCAL[N_LOCAL], the final solution estimate computed
-//    by this process.
-//
 {
   int buffer[2];
   int collect1 = 10;
@@ -519,26 +409,6 @@ double exact ( double x, double t )
 //
 //    EXACT evaluates the exact solution
 //
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    17 November 2013
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    Input, double X, the location.
-//
-//    Input, double T, the time.
-//
-//    Output, double EXACT, the value of the exact solution.
-//
 {
   const double c = 1.0;
   const double pi = 3.141592653589793;
@@ -558,26 +428,6 @@ double dudt ( double x, double t )
 //
 //    DUDT evaluates the partial derivative dudt.
 //
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    17 November 2013
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    Input, double X, the location.
-//
-//    Input, double T, the time.
-//
-//    Output, double DUDT, the value of the time derivative of the solution.
-//
 {
   const double c = 1.0;
   const double pi = 3.141592653589793;
@@ -596,26 +446,6 @@ void timestamp ( )
 //  Purpose:
 //
 //    TIMESTAMP prints the current YMDHMS date as a time stamp.
-//
-//  Example:
-//
-//    31 May 2001 09:45:54 AM
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    08 July 2009
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    None
 //
 {
 # define TIME_SIZE 40
