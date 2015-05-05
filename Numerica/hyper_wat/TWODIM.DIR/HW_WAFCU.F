@@ -963,7 +963,7 @@ C        approximate-state Riemann solvers
 * 
 C        First compute Two-Rarefaction solution for depth
 *
-         AS = 0.5*(CL + CR) + 0.25*(UL - UR)
+         AS = 0.5*(CL + CR) + 0.5*(UL - UR)
          DS = AS*AS/GRAVIT
 *
          IF(DS.LE.MIN(DL,DR))THEN
