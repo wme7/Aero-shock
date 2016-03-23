@@ -1,0 +1,117 @@
+#=================================================================================
+#
+# This file is a input file which is used to set up simulation, initial condiaitons.
+#
+#=================================================================================
+
+
+# SAMPLING_TIME:        start to sampled timestep number.
+# NUMBER_OF_TIMESTEP:   total executed number of timesteps.
+# PARTICLE_PER_CELL:    initial number of particle per cell.
+# MAX_PARTICLE_NUMBER:  maximum number of simulation particles.
+#=================================================================
+SAMPLING_TIME                  = 20000
+NUMBER_OF_TIMESTEP             = 60000
+PARTICLE_PER_CELL              = 15.
+MAX_PARTICLE_NUMBER            = 5000000
+
+
+# Setup of simulation domain region (The unit is meter).
+#=================================================================
+# X_LOWER:              domain region in x-direction.
+# X_HIGHER:             domain region in x-direction.
+# Y_LOWER:              domain region in y-direction.
+# Y_HIGHER:             domain region in y-direction.
+# X_CELL_NUMBER:        number of cells in x-direction.
+# Y_CELL_NUMBER:        number of cells in y-direction.
+#=================================================================
+X_LOWER                        = 0.
+X_HIGHER                       = 0.8
+Y_LOWER                        = 0.
+Y_HIGHER                       = 1.
+X_CELL_NUMBER                  = 400
+Y_CELL_NUMBER                  = 500
+
+
+# Setup of initial flow condition. 
+#=================================================================
+# X_VELOCITY:           initial velocity in x-direction.
+# Y_VELOCITY            initial velocity in y-direction.
+# Z_VELOCITY            initial velocity in z-direction.
+# NUMBER_DENSITY        initial number density.
+# TEMPERATURE           initial temperature.
+#=================================================================
+X_VELOCITY                     = 1117.14
+Y_VELOCITY                     = 644.98
+Z_VELOCITY                     = 0.
+NUMBER_DENSITY                 = 3.24E+20
+TEMPERATURE                    = 300.
+
+
+# Setup of number of boundary/internal blocks, and inlet faces.
+#=================================================================
+# BOUNDARY_BLOCK_NUMBER:  number of blocks.
+# INTERNAL_BLOCK_NUMBER:  number of internal blocks.
+# INLET_CELL_FACE_NUMBER: number of inlet faces.
+#=================================================================
+BOUNDARY_BLOCK_NUMBER          = 4
+INTERNAL_BLOCK_NUMBER          = 1
+INLET_CELL_FACE_NUMBER         = 1800
+
+
+
+#=================================================================================
+#
+# This is second test case which is supersonic Mach reflection problem.
+#
+#=================================================================================
+#SAMPLING_TIME                  = 100000
+#NUMBER_OF_TIMESTEP             = 150000
+#PARTICLE_PER_CELL              = 15.
+#MAX_PARTICLE_NUMBER            = 7500000
+#
+#X_LOWER                        = 0.
+#X_HIGHER                       = 3.2
+#Y_LOWER                        = 0.
+#Y_HIGHER                       = 2.
+#X_CELL_NUMBER                  = 640
+#Y_CELL_NUMBER                  = 400
+#
+#X_VELOCITY                     = 1612.45
+#Y_VELOCITY                     = 0.
+#Z_VELOCITY                     = 0.
+#NUMBER_DENSITY                 = 1.294E+20
+#TEMPERATURE                    = 300.
+#
+#BOUNDARY_BLOCK_NUMBER          = 5
+#INTERNAL_BLOCK_NUMBER          = 1
+#INLET_CELL_FACE_NUMBER         = 1200
+
+
+
+#=================================================================================
+#
+# This is third test case which is hypersoinc flow over a ramp.
+#
+#=================================================================================
+#SAMPLING_TIME                  = 20000
+#NUMBER_OF_TIMESTEP             = 60000
+#PARTICLE_PER_CELL              = 20.
+#MAX_PARTICLE_NUMBER            = 5000000
+#
+#X_LOWER                        = 0.
+#X_HIGHER                       = 2.5
+#Y_LOWER                        = 0.
+#Y_HIGHER                       = 1.
+#X_CELL_NUMBER                  = 500
+#Y_CELL_NUMBER                  = 200
+#
+#X_VELOCITY                     = 1831.87
+#Y_VELOCITY                     = 0.
+#Z_VELOCITY                     = 0.
+#NUMBER_DENSITY                 = 1.294E+20
+#TEMPERATURE                    = 20.
+#
+#BOUNDARY_BLOCK_NUMBER          = 6
+#INTERNAL_BLOCK_NUMBER          = 1
+#INLET_CELL_FACE_NUMBER         = 1200
